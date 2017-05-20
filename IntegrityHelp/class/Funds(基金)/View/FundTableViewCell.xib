@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="FundTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="368" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sl5-Qh-vn5">
+                        <rect key="frame" x="15" y="15" width="104.5" height="69.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="sl5-Qh-vn5" secondAttribute="height" multiplier="3:2" id="pi0-cU-Nde"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安徽灵璧土建工程" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsj-UO-oUB">
+                        <rect key="frame" x="129.5" y="18" width="122.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目周期3个月" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNa-1V-CE3">
+                        <rect key="frame" x="129.5" y="60.5" width="81.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pjb-MT-7Jy">
+                        <rect key="frame" x="0.0" y="98.5" width="368" height="1"/>
+                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="qcc-Uq-hXP"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目总融资1000万元项目总融资1000万元项目总融资1000万元项目总融资1000万元项目总融资1000万元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-PN-qK6">
+                        <rect key="frame" x="129.5" y="41" width="228.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sl5-Qh-vn5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="0Wt-qX-peZ"/>
+                    <constraint firstItem="NMc-PN-qK6" firstAttribute="top" secondItem="qsj-UO-oUB" secondAttribute="bottom" constant="5" id="0iu-iC-3Lg"/>
+                    <constraint firstItem="UNa-1V-CE3" firstAttribute="leading" secondItem="sl5-Qh-vn5" secondAttribute="trailing" constant="10" id="2x6-VM-zBo"/>
+                    <constraint firstItem="Pjb-MT-7Jy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Qfh-4K-7HU"/>
+                    <constraint firstAttribute="bottom" secondItem="sl5-Qh-vn5" secondAttribute="bottom" constant="15" id="UlF-ph-UHm"/>
+                    <constraint firstAttribute="trailing" secondItem="NMc-PN-qK6" secondAttribute="trailing" constant="10" id="Z7U-bb-54T"/>
+                    <constraint firstItem="sl5-Qh-vn5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="aN6-YJ-itY"/>
+                    <constraint firstAttribute="bottom" secondItem="Pjb-MT-7Jy" secondAttribute="bottom" id="bFM-qG-iBg"/>
+                    <constraint firstItem="qsj-UO-oUB" firstAttribute="leading" secondItem="sl5-Qh-vn5" secondAttribute="trailing" constant="10" id="gQn-zA-aDp"/>
+                    <constraint firstItem="UNa-1V-CE3" firstAttribute="top" secondItem="NMc-PN-qK6" secondAttribute="bottom" constant="5" id="i7j-Fq-us3"/>
+                    <constraint firstItem="qsj-UO-oUB" firstAttribute="top" secondItem="sl5-Qh-vn5" secondAttribute="top" constant="3" id="ktq-EM-Rpm"/>
+                    <constraint firstAttribute="trailing" secondItem="Pjb-MT-7Jy" secondAttribute="trailing" id="l6C-zz-Zyj"/>
+                    <constraint firstItem="NMc-PN-qK6" firstAttribute="leading" secondItem="sl5-Qh-vn5" secondAttribute="trailing" constant="10" id="p3Y-3k-4SF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="NMc-PN-qK6" id="93W-PK-Uu0"/>
+                <outlet property="icon" destination="sl5-Qh-vn5" id="1VC-E3-aZV"/>
+                <outlet property="time" destination="UNa-1V-CE3" id="nip-JX-0ST"/>
+                <outlet property="title" destination="qsj-UO-oUB" id="zjP-Bw-45p"/>
+            </connections>
+            <point key="canvasLocation" x="-515" y="-256"/>
+        </tableViewCell>
+    </objects>
+</document>

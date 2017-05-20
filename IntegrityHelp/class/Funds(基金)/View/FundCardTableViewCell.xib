@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="FundCardTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DNk-XQ-1vP">
+                        <rect key="frame" x="15" y="10" width="39.5" height="39.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="DNk-XQ-1vP" secondAttribute="height" multiplier="1:1" id="Q0o-Di-khi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国建设银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL1-I6-XgR">
+                        <rect key="frame" x="64.5" y="10" width="98" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尾号1667" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2j-E3-SCZ">
+                        <rect key="frame" x="167.5" y="11.5" width="60.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计两小时内到账" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-Zq-KnT">
+                        <rect key="frame" x="64.5" y="33.5" width="106.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund_selected" translatesAutoresizingMaskIntoConstraints="NO" id="b42-Vw-h6s">
+                        <rect key="frame" x="313" y="21.5" width="16" height="16"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="V2j-E3-SCZ" firstAttribute="leading" secondItem="mL1-I6-XgR" secondAttribute="trailing" constant="5" id="4ic-09-E6S"/>
+                    <constraint firstItem="sNq-Zq-KnT" firstAttribute="bottom" secondItem="DNk-XQ-1vP" secondAttribute="bottom" id="9Nb-10-lgO"/>
+                    <constraint firstItem="V2j-E3-SCZ" firstAttribute="centerY" secondItem="mL1-I6-XgR" secondAttribute="centerY" id="Fbs-id-GOx"/>
+                    <constraint firstItem="sNq-Zq-KnT" firstAttribute="leading" secondItem="DNk-XQ-1vP" secondAttribute="trailing" constant="10" id="KJC-j8-fkh"/>
+                    <constraint firstItem="DNk-XQ-1vP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="OJi-VW-KRk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="b42-Vw-h6s" secondAttribute="trailing" constant="20" id="TCf-iq-a5k"/>
+                    <constraint firstItem="DNk-XQ-1vP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aJI-KK-Bcf"/>
+                    <constraint firstAttribute="bottom" secondItem="DNk-XQ-1vP" secondAttribute="bottom" constant="10" id="fFI-70-zjB"/>
+                    <constraint firstItem="mL1-I6-XgR" firstAttribute="top" secondItem="DNk-XQ-1vP" secondAttribute="top" id="jsg-ta-DFw"/>
+                    <constraint firstItem="b42-Vw-h6s" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mtc-Wg-lkM"/>
+                    <constraint firstItem="mL1-I6-XgR" firstAttribute="leading" secondItem="DNk-XQ-1vP" secondAttribute="trailing" constant="10" id="orF-6N-Mu3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cardName" destination="mL1-I6-XgR" id="ONF-Y8-M1I"/>
+                <outlet property="cardNumber" destination="V2j-E3-SCZ" id="y10-UD-Vw6"/>
+                <outlet property="icon" destination="DNk-XQ-1vP" id="EIA-DK-E5m"/>
+                <outlet property="selectFlag" destination="b42-Vw-h6s" id="Ivx-4n-Z3J"/>
+                <outlet property="tip" destination="sNq-Zq-KnT" id="ttv-y4-mKP"/>
+            </connections>
+            <point key="canvasLocation" x="-211" y="-139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="fund_selected" width="16" height="16"/>
+    </resources>
+</document>

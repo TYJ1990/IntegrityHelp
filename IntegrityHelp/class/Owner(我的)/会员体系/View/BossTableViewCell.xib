@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="KGk-i7-Jjw" customClass="BossTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="366" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JLc-cl-afq">
+                        <rect key="frame" x="55" y="10" width="52.5" height="52.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="JLc-cl-afq" secondAttribute="height" multiplier="1:1" id="PW1-i9-jdJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-QR-dsD">
+                        <rect key="frame" x="119.5" y="28" width="38" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQ2-ke-KtZ">
+                        <rect key="frame" x="0.0" y="71.5" width="366" height="1"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="akq-dd-04A"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vQ2-ke-KtZ" secondAttribute="trailing" id="6N4-qC-DEW"/>
+                    <constraint firstItem="JLc-cl-afq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="DaQ-CU-6GA"/>
+                    <constraint firstItem="JLc-cl-afq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="FJ4-4n-Wag"/>
+                    <constraint firstItem="GTb-QR-dsD" firstAttribute="leading" secondItem="JLc-cl-afq" secondAttribute="trailing" constant="12" id="PJm-Ny-fJg"/>
+                    <constraint firstItem="vQ2-ke-KtZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Sdw-wm-j5F"/>
+                    <constraint firstAttribute="bottom" secondItem="JLc-cl-afq" secondAttribute="bottom" constant="10" id="XcA-oC-Pyx"/>
+                    <constraint firstAttribute="bottom" secondItem="vQ2-ke-KtZ" secondAttribute="bottom" id="g9X-QJ-rI4"/>
+                    <constraint firstItem="GTb-QR-dsD" firstAttribute="centerY" secondItem="JLc-cl-afq" secondAttribute="centerY" id="kW2-7v-RaN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="icon" destination="JLc-cl-afq" id="wCY-xR-yq0"/>
+                <outlet property="name" destination="GTb-QR-dsD" id="Mhd-5B-77P"/>
+            </connections>
+            <point key="canvasLocation" x="-361" y="-205.5"/>
+        </tableViewCell>
+    </objects>
+</document>

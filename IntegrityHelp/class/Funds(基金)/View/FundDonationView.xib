@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FundDonationView">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="205"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="让爱心成为一种习惯。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmY-ds-r3U">
+                    <rect key="frame" x="15" y="20" width="133" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qew-TB-xyD">
+                    <rect key="frame" x="15" y="56" width="91.5" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="FpN-L5-xBz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="20诚信币">
+                        <color key="titleColor" red="1" green="0.42745098040000001" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIb-YC-CuN">
+                    <rect key="frame" x="116.5" y="56" width="91.5" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="wvk-w8-Rm6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="50诚信币">
+                        <color key="titleColor" red="1" green="0.42745098039215684" blue="0.023529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-qO-Rb6">
+                    <rect key="frame" x="218" y="56" width="140" height="40"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="其他" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-AG-SBm">
+                            <rect key="frame" x="5" y="0.0" width="85" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="1M9-Lh-xfP"/>
+                                <constraint firstAttribute="height" constant="40" id="o9s-8g-soW"/>
+                            </constraints>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="诚信币" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7i-rb-peB">
+                            <rect key="frame" x="86" y="10.5" width="49" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="1" green="0.42745098040000001" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund_select" translatesAutoresizingMaskIntoConstraints="NO" id="3MQ-6x-LTc">
+                            <rect key="frame" x="125" y="25" width="15" height="15"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="H7i-rb-peB" secondAttribute="trailing" constant="5" id="0e3-IG-hfW"/>
+                        <constraint firstItem="qSI-AG-SBm" firstAttribute="centerY" secondItem="ZGd-qO-Rb6" secondAttribute="centerY" id="9vX-5Z-uZs"/>
+                        <constraint firstAttribute="trailing" secondItem="3MQ-6x-LTc" secondAttribute="trailing" id="Hvw-9f-5jl"/>
+                        <constraint firstItem="H7i-rb-peB" firstAttribute="centerY" secondItem="qSI-AG-SBm" secondAttribute="centerY" id="J6v-qr-iG6"/>
+                        <constraint firstItem="qSI-AG-SBm" firstAttribute="leading" secondItem="ZGd-qO-Rb6" secondAttribute="leading" constant="5" id="R2y-gm-XKd"/>
+                        <constraint firstAttribute="width" constant="140" id="Vd9-pt-BTl"/>
+                        <constraint firstAttribute="bottom" secondItem="3MQ-6x-LTc" secondAttribute="bottom" id="XLk-kZ-zLb"/>
+                        <constraint firstAttribute="height" constant="40" id="g22-rU-Hew"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nt8-iX-0v3">
+                    <rect key="frame" x="15" y="146" width="343" height="45"/>
+                    <color key="backgroundColor" red="1" green="0.42745098040000001" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="aGR-qU-i6u"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="自动捐款">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THz-j2-3a9">
+                    <rect key="frame" x="15" y="111" width="159.5" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQH-wU-OVR">
+                            <rect key="frame" x="0.0" y="4" width="16" height="22"/>
+                            <state key="normal" image="fund_selected"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同意并接受" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pap-QQ-GVu">
+                            <rect key="frame" x="24" y="7.5" width="61.5" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23H-wg-IGq">
+                            <rect key="frame" x="85.5" y="1.5" width="74" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="《捐款协议》">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="pap-QQ-GVu" firstAttribute="centerY" secondItem="VQH-wU-OVR" secondAttribute="centerY" id="1Uv-2g-2ob"/>
+                        <constraint firstItem="VQH-wU-OVR" firstAttribute="leading" secondItem="THz-j2-3a9" secondAttribute="leading" id="AAd-Ah-bl9"/>
+                        <constraint firstItem="pap-QQ-GVu" firstAttribute="leading" secondItem="VQH-wU-OVR" secondAttribute="trailing" constant="8" id="Mrr-l4-4Wa"/>
+                        <constraint firstItem="23H-wg-IGq" firstAttribute="leading" secondItem="pap-QQ-GVu" secondAttribute="trailing" id="TsN-3a-EyF"/>
+                        <constraint firstAttribute="trailing" secondItem="23H-wg-IGq" secondAttribute="trailing" id="YbK-Ke-1VQ"/>
+                        <constraint firstAttribute="height" constant="30" id="a5g-gO-NCN"/>
+                        <constraint firstItem="VQH-wU-OVR" firstAttribute="centerY" secondItem="THz-j2-3a9" secondAttribute="centerY" id="cKy-NV-ym5"/>
+                        <constraint firstItem="23H-wg-IGq" firstAttribute="centerY" secondItem="THz-j2-3a9" secondAttribute="centerY" id="kyz-Ln-pS9"/>
+                    </constraints>
+                </view>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund_select" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-4U-OLW">
+                    <rect key="frame" x="91" y="81" width="15" height="15"/>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund_select" translatesAutoresizingMaskIntoConstraints="NO" id="jFx-mx-omR">
+                    <rect key="frame" x="193" y="81" width="15" height="15"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jFx-mx-omR" firstAttribute="trailing" secondItem="SIb-YC-CuN" secondAttribute="trailing" id="0wl-s1-AJ7"/>
+                <constraint firstItem="rmY-ds-r3U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="2ZW-Y7-lod"/>
+                <constraint firstItem="THz-j2-3a9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="9BQ-4t-TtZ"/>
+                <constraint firstItem="SIb-YC-CuN" firstAttribute="centerY" secondItem="qew-TB-xyD" secondAttribute="centerY" id="A0p-4m-Ss0"/>
+                <constraint firstItem="FmT-4U-OLW" firstAttribute="bottom" secondItem="qew-TB-xyD" secondAttribute="bottom" id="CLK-PX-7PJ"/>
+                <constraint firstItem="qew-TB-xyD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="CX2-44-cnO"/>
+                <constraint firstItem="rmY-ds-r3U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="ICh-Hm-Lb4"/>
+                <constraint firstItem="Nt8-iX-0v3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="KKh-cx-C3G"/>
+                <constraint firstItem="ZGd-qO-Rb6" firstAttribute="leading" secondItem="SIb-YC-CuN" secondAttribute="trailing" constant="10" id="KUs-JQ-fhp"/>
+                <constraint firstAttribute="trailing" secondItem="ZGd-qO-Rb6" secondAttribute="trailing" constant="15" id="Ohj-Nk-VYd"/>
+                <constraint firstItem="FmT-4U-OLW" firstAttribute="trailing" secondItem="qew-TB-xyD" secondAttribute="trailing" id="RH7-TF-IEV"/>
+                <constraint firstItem="qew-TB-xyD" firstAttribute="top" secondItem="rmY-ds-r3U" secondAttribute="bottom" constant="20" id="U3V-aS-M0f"/>
+                <constraint firstItem="THz-j2-3a9" firstAttribute="top" secondItem="jFx-mx-omR" secondAttribute="bottom" constant="15" id="c73-qa-lnY"/>
+                <constraint firstItem="SIb-YC-CuN" firstAttribute="leading" secondItem="qew-TB-xyD" secondAttribute="trailing" constant="10" id="crC-6B-Hh5"/>
+                <constraint firstItem="ZGd-qO-Rb6" firstAttribute="centerY" secondItem="SIb-YC-CuN" secondAttribute="centerY" id="gIX-em-qde"/>
+                <constraint firstItem="SIb-YC-CuN" firstAttribute="width" secondItem="qew-TB-xyD" secondAttribute="width" id="jCE-fv-zJT"/>
+                <constraint firstAttribute="trailing" secondItem="Nt8-iX-0v3" secondAttribute="trailing" constant="15" id="k5O-fA-1IG"/>
+                <constraint firstItem="jFx-mx-omR" firstAttribute="bottom" secondItem="SIb-YC-CuN" secondAttribute="bottom" id="xfD-HD-9ML"/>
+                <constraint firstItem="Nt8-iX-0v3" firstAttribute="top" secondItem="THz-j2-3a9" secondAttribute="bottom" constant="5" id="zWT-43-e7Z"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="agreeProticol" destination="VQH-wU-OVR" id="PCe-gq-5zU"/>
+                <outlet property="donationBtn" destination="Nt8-iX-0v3" id="Lsz-5D-oq6"/>
+                <outlet property="fiftyBtn" destination="SIb-YC-CuN" id="uCK-mc-S72"/>
+                <outlet property="fiftyImg" destination="jFx-mx-omR" id="uRq-bg-Zf9"/>
+                <outlet property="otherImg" destination="3MQ-6x-LTc" id="UbF-9l-11O"/>
+                <outlet property="otherNum" destination="ZGd-qO-Rb6" id="G2h-C5-LeV"/>
+                <outlet property="otherTF" destination="qSI-AG-SBm" id="YGa-b8-gVi"/>
+                <outlet property="proticolBtn" destination="23H-wg-IGq" id="op7-7L-gh8"/>
+                <outlet property="twentyBtn" destination="qew-TB-xyD" id="GES-hX-aVg"/>
+                <outlet property="twentyImg" destination="FmT-4U-OLW" id="TLn-QL-Xnt"/>
+            </connections>
+            <point key="canvasLocation" x="-955" y="-600"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fund_select" width="15" height="15"/>
+        <image name="fund_selected" width="16" height="16"/>
+    </resources>
+</document>
