@@ -20,6 +20,7 @@
 @property(nonatomic,strong) NSString *imgDataBase64_verso;
 @property(nonatomic,strong)UITapGestureRecognizer *tap1;
 @property(nonatomic,strong)UITapGestureRecognizer *tap2;
+@property (weak, nonatomic) IBOutlet UILabel *checkingType;
 
 @end
 
@@ -76,14 +77,21 @@
         SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:NO];
         if (state == SESSIONSUCCESS) {
             if (response[@"data"]) {
-                if ([response[@"data"][@"Isshow"] boolValue]) {
+                if ([response[@"data"][@"Isshow"] integerValue] == 1) {
+                    _checkingType.text = @"审核通过";
                     _sureUploadBtn.enabled = NO;
                     _sureUploadBtn.backgroundColor = RGB(212,213,214);
                     [_realNameImg1 removeGestureRecognizer:_tap1];
                     [_realNameImg2 removeGestureRecognizer:_tap2];
+                    [_realNameImg1 sd_setImageWithURL:[NSURL URLWithString:imageUrl(response[@"data"][@"Pic1"])]];
+                    [_realNameImg2 sd_setImageWithURL:[NSURL URLWithString:imageUrl(response[@"data"][@"Pic2"])]];
+                }else if([response[@"data"][@"Isshow"] integerValue] == 2){
+                     _checkingType.text = [NSString stringWithFormat:@"审核不通过：%@,请重新上传",response[@"data"][@"Content"]];
+                }else{
+                    _checkingType.text = @"审核中...";
+                    [_realNameImg1 sd_setImageWithURL:[NSURL URLWithString:imageUrl(response[@"data"][@"Pic1"])]];
+                    [_realNameImg2 sd_setImageWithURL:[NSURL URLWithString:imageUrl(response[@"data"][@"Pic2"])]];
                 }
-                [_realNameImg1 sd_setImageWithURL:[NSURL URLWithString:imageUrl(response[@"data"][@"Pic1"])]];
-                [_realNameImg2 sd_setImageWithURL:[NSURL URLWithString:imageUrl(response[@"data"][@"Pic2"])]];
             }
         }
     } fail:^(NSError *error) {

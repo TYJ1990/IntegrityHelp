@@ -83,9 +83,9 @@
         grayView;
     })];
     
-    _wbpopView = [[WBPopOverView alloc] initWithOrigin:CGPointMake(ScreenW - 25, 55) Width:ScreenW*0.42 Height:45*_menuTitle.count Direction:(WBArrowDirectionUp3) view:grayView];
+    _wbpopView = [[WBPopOverView alloc] initWithOrigin:CGPointMake(ScreenW - 25, 55) Width:ScreenW*0.4 Height:45*_menuTitle.count Direction:(WBArrowDirectionUp3) view:grayView];
     [_wbpopView.backView addSubview:({
-        UITableView *tableV = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,ScreenW*0.42, 45*_menuTitle.count) style:(UITableViewStylePlain)];
+        UITableView *tableV = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,ScreenW*0.4, 45*_menuTitle.count) style:(UITableViewStylePlain)];
         tableV.delegate = self;
         tableV.dataSource = self;
         tableV.rowHeight = 45;
@@ -115,8 +115,8 @@
         _tableView;
     })];
     
-    _titleArray = @[@"我的邀请",@"会员体系",@"我的审核",@"我的主题",@"退出登录"];
-    _imageArray = @[@"owner_invite",@"owner_member",@"owner_select",@"owner_topic",@"owner_exit"];
+    _titleArray = @[@"我的邀请",@"会员体系",@"我的审核",@"我的主题",@"我的资产",@"我的基金",@"退出登录"];
+    _imageArray = @[@"owner_invite",@"owner_member",@"owner_select",@"owner_topic",@"owner_property",@"owner_funds",@"owner_exit"];
     _menuTitle = @[@"积分排行", @"签到", @"实名认证"];
     _menuPic = @[@"owner_integral", @"owner_list", @"owner_trueName"];
 }
@@ -154,7 +154,7 @@
 
 #pragma mark tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return tableView == _tableView ? 5 : 3;
+    return tableView == _tableView ? _titleArray.count : 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -213,14 +213,15 @@
                 [self.navigationController pushViewController:topicVC animated:YES];
             }
                 break;
-//            case 4:{
-//                OpenStoreViewController *openVC = [[OpenStoreViewController alloc] init];
-//                openVC.hidesBottomBarWhenPushed = YES;
-//                openVC.flag = @"owner";
-//                [self.navigationController pushViewController:openVC animated:YES];
-//            }
-//                break;
             case 4:{
+                
+            }
+                break;
+            case 5:{
+                
+            }
+                break;
+            case 6:{
                 [self ExitAction];
             }
                 break;

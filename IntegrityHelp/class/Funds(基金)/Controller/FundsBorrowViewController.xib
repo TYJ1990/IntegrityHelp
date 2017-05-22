@@ -91,7 +91,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="最多可借3000" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjy-bY-INh">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入借款金额" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjy-bY-INh">
                                     <rect key="frame" x="210" y="15.5" width="150" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="150" id="1U9-R2-L5v"/>
@@ -466,7 +466,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1964" y="-506"/>
+            <point key="canvasLocation" x="-2068" y="-726"/>
         </view>
     </objects>
     <resources>

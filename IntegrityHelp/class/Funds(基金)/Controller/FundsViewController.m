@@ -25,6 +25,7 @@
 @property(nonatomic,strong) FundDonationView *donationView;
 @property(nonatomic,assign) BOOL selected;
 @property(nonatomic,strong) NSString *type;
+@property(nonatomic,assign) NSInteger pageNumber;
 
 @end
 
@@ -37,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"refresh" object:nil];
     
     self.title = @"基金";
     [self setUI];
@@ -48,11 +50,20 @@
 
 - (void)setUI{
     
+    _pageNumber = 1;
     [self.view addSubview:({
         _tableView = [[UITableView alloc] init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 100;
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            _pageNumber = 1;
+            [self downloadData];
+        }];
+        _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            _pageNumber ++;
+            [self downloadData];
+        }];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerNib:[UINib nibWithNibName:@"FundTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"fundCell"];
         _tableView;
@@ -63,6 +74,10 @@
         make.top.mas_equalTo(weakSelf.view.mas_top).with.offset(0);
         make.bottom.mas_equalTo(weakSelf.view.mas_bottom).with.offset(0);
     }];
+}
+
+- (void)refresh{
+    [self downloadData];
 }
 
 
@@ -194,7 +209,22 @@
 }
 
 - (void)donationClick{
+    if (_selected) {
+        return [self.view Message:@"请您同意捐款协议哦" HiddenAfterDelay:0.7];
+    }
+    if ([TXUtilsString isBlankString:_type] || ([_type isEqualToString:@"other"] && _donationView.otherTF.text.length == 0)) {
+        return [self.view Message:@"请选择诚信币哦" HiddenAfterDelay:0.7];
+    }
     
+    [self.view Message:@"捐赠成功" HiddenAfterDelay:0.7];
+    [UIView animateWithDuration:0.5 animations:^{
+        _grayView.alpha = 0;
+        _donationView.alpha = 0;
+        _donationView.frame = CGRectMake(0, ScreenH, ScreenW, 205);
+    } completion:^(BOOL finished) {
+        [_grayView removeFromSuperview];
+        [_donationView removeFromSuperview];
+    }];
 }
 
 
@@ -202,16 +232,28 @@
 
 - (void)downloadData{
     [self.view loadingOnAnyView];
-    [HYBNetworking postWithUrl:@"IosBorrow/index" refreshCache:NO params:@{@"page":@1,@"pagesize":@20} success:^(id response) {
+    [HYBNetworking postWithUrl:@"IosBorrow/index" refreshCache:NO params:@{@"page":[NSNumber numberWithInteger:_pageNumber],@"pagesize":@10} success:^(id response) {
         SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:YES];
         if (state == SESSIONSUCCESS) {
             NSError *error;
-            _fundModel = [[FundModel alloc] initWithDictionary:response error:&error];
+            if (_pageNumber == 1) {
+                _fundModel = [[FundModel alloc] initWithDictionary:response error:&error];
+            }else{
+                FundModel *model = [[FundModel alloc] initWithDictionary:response error:&error];
+                if (model.data.count == 0) {
+                    [self.view Message:@"没有更多数据了" HiddenAfterDelay:1];
+                }
+                [_fundModel.data addObjectsFromArray:model.data];
+            }
             if (!error) {
+                [_tableView.mj_footer endRefreshing];
+                [_tableView.mj_header endRefreshing];
                 [_tableView reloadData];
             }
         }
     } fail:^(NSError *error) {
+        [_tableView.mj_footer endRefreshing];
+        [_tableView.mj_header endRefreshing];
         [self.view removeAnyView];
     }];
 }

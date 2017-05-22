@@ -98,7 +98,7 @@
                 <outlet property="totalSorce" destination="ZXz-oh-Fe1" id="Fgu-Fr-RMd"/>
                 <outlet property="username" destination="yY3-BU-uYD" id="cv3-0o-Zz9"/>
             </connections>
-            <point key="canvasLocation" x="-453" y="-234"/>
+            <point key="canvasLocation" x="-71" y="-160"/>
         </view>
     </objects>
     <resources>

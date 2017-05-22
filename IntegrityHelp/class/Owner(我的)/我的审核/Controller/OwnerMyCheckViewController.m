@@ -313,11 +313,18 @@
                     weakSelf.typeID2 = type;
                     [weakSelf loadDataFromSeverce2];
                 }
-                [weakSelf.conditionView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.height.mas_equalTo(30.0f);
-                }];
                 weakSelf.conditionLabel.text = [NSString stringWithFormat:@"筛选条件：%@ %@",status?status:@"",name?name:@""];
-                weakSelf.closeBtn.hidden = NO;
+                if (status.length>0 || name.length > 0) {
+                    [weakSelf.conditionView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.height.mas_equalTo(30.0f);
+                    }];
+                    weakSelf.closeBtn.hidden = NO;
+                }else{
+                    [weakSelf.conditionView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.height.mas_equalTo(0.0f);
+                    }];
+                    weakSelf.closeBtn.hidden = YES;
+                }
             };
             _filtrateView;
         })];

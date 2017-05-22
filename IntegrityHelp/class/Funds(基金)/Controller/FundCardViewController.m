@@ -9,6 +9,8 @@
 #import "FundCardViewController.h"
 #import "FundCardTableViewCell.h"
 #import "FundCardModel.h"
+#import "FundAddCardViewController.h"
+
 
 @interface FundCardViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableview;
@@ -23,6 +25,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:(UIStatusBarStyleDefault)];
     [self initnavi];
 }
 
@@ -97,14 +100,19 @@
 }
 
 - (void)submit{
-    [_dic setValue:_bankID forKey:@"bank_id"];
+    if ([TXUtilsString isBlankString:_bankID]) {
+        return [self.view Message:@"请选择银行卡" HiddenAfterDelay:0.8];
+    }
     
+    [_dic setValue:_bankID forKey:@"bank_id"];
     [self.view loadingOnAnyView];
     [HYBNetworking postWithUrl:@"IosBorrow/create" refreshCache:NO params:_dic success:^(id response) {
-        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:YES];
+        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:YES showErrorMsg:YES];
         if (state == SESSIONSUCCESS) {
-            NSError *error;
-            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh" object:nil];
+                [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+            });
         }
     } fail:^(NSError *error) {
         [self.view removeAnyView];
@@ -132,11 +140,11 @@
         FundCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         cell.icon.layer.cornerRadius = 20;
         cell.icon.layer.masksToBounds = YES;
-        cell.icon.image = [UIImage imageNamed:@"placeholder_person"];
-        cell.cardName.text = [_cardModel.data[indexPath.row] Name];
+        cell.icon.image = [UIImage imageNamed:@"fund_cardImg"];
+        cell.cardName.text = [[_cardModel.data[indexPath.row] Name] substringToIndex:4];
         NSString *card_number = [_cardModel.data[indexPath.row] Card_no];
         cell.cardNumber.text = [NSString stringWithFormat:@"尾号%@",[card_number substringFromIndex:card_number.length - 4]];
-        if ([_cardModel.data[indexPath.row] isSelect]) {
+        if ([[_cardModel.data[indexPath.row] flag] boolValue]) {
             cell.selectFlag.hidden = NO;
         }else{
             cell.selectFlag.hidden = YES;
@@ -147,7 +155,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"bottomCell"];
         }
-        cell.textLabel.text = @"添加储蓄卡";
+        cell.textLabel.text = @"添加银行卡";
         cell.textLabel.font = kFont(16);
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -156,11 +164,37 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    FundCardTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.selectFlag.hidden = NO;
-    _bankID = [_cardModel.data[indexPath.row] Id];
-    _submitBtn.backgroundColor = kMainColor;
-    _submitBtn.enabled = YES;
+    if (indexPath.section == 0) {
+        FundCardTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.selectFlag.hidden = NO;
+        _bankID = [_cardModel.data[indexPath.row] Id];
+        _submitBtn.backgroundColor = kMainColor;
+        _submitBtn.enabled = YES;
+        FundCardListModel *model = _cardModel.data[indexPath.row];
+        model.flag = @"1";
+    }else{
+        [self checking];
+    }
+}
+
+- (void)checking{
+    [self.view loadingOnAnyView];
+    [HYBNetworking postWithUrl:@"IosBorrow/realName" refreshCache:NO params:@{@"u_id":[Utils getValueForKey:@"u_id"],@"u_pwd":[Utils getValueForKey:@"pwdMd5"]} success:^(id response) {
+        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:YES];
+        if (state == SESSIONSUCCESS) {
+            FundAddCardViewController *addVC = [[FundAddCardViewController alloc] init];
+            WS(weakSelf)
+            addVC.callBack = ^(){
+                [weakSelf downloadData];
+            };
+            [self.navigationController pushViewController:addVC animated:YES];
+        }else{
+            
+        }
+    } fail:^(NSError *error) {
+        [self.view removeAnyView];
+    }];
+
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{

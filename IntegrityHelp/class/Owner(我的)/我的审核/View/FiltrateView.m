@@ -199,6 +199,7 @@
     self.hidden = YES;
     _status = @"";
     _type = @"";
+    _name = @"";
     _index = 0;
 }
 

@@ -28,6 +28,10 @@
 #import "JFImagePickerController.h"
 
 
+//倒计时
+#import "XFCountDownButton.h"
+
+
 //获取相册
 #import "SelectOnePicture.h"
 #import <AVFoundation/AVCaptureDevice.h>

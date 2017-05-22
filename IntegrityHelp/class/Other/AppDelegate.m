@@ -51,7 +51,7 @@
     [HYBNetworking updateBaseUrl:@"http://101.37.38.41:8090/"];
 //    [HYBNetworking updateBaseUrl:@"http://192.168.199.199/"];
     [HYBNetworking cacheGetRequest:NO shoulCachePost:NO];
-    [HYBNetworking enableInterfaceDebug:NO];
+    [HYBNetworking enableInterfaceDebug:YES];
     
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;

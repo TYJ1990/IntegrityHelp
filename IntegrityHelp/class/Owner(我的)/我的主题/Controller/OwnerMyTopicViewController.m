@@ -226,20 +226,28 @@
     if (!_filtrateView) {
         WS(weakSelf)
         [self.view addSubview:({
-            _filtrateView = [[FiltrateView alloc] initWithFrame:CGRectZero statusArray:@[@"未审核",@"审核中",@"审核通过",@"合作中",@"完成"] typeArray:_typeModel.data];
+            _filtrateView = [[FiltrateView alloc] initWithFrame:CGRectZero statusArray:@[@"未审核",@"审核中",@"审核通过",@"合作中",@"合作完成"] typeArray:_typeModel.data];
             _filtrateView.callBack = ^(NSString *status,NSString *type,NSString *name){
                 weakSelf.typeID = type;
-                if ([status isEqualToString:@""]) {
+                if ([TXUtilsString isBlankString:status]) {
                     weakSelf.status = @"";
                 }else{
                     weakSelf.status = [NSString stringWithFormat:@"%ld",[status integerValue] - 100];
                 }
                 [weakSelf loadDataFromSeverce];
-                [weakSelf.conditionView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.height.mas_equalTo(30.0f);
-                }];
-                weakSelf.conditionLabel.text = [NSString stringWithFormat:@"筛选条件：%@ %@",status?status:@"",name?name:@""];
-                weakSelf.closeBtn.hidden = NO;
+                
+                weakSelf.conditionLabel.text = [NSString stringWithFormat:@"筛选条件：%@%@",status.length>0?name.length>0?[NSString stringWithFormat:@"%@、",[weakSelf traslteWithString:status]]:[weakSelf traslteWithString:status]:@"",name?name:@""];
+                if (status.length>0 || name.length > 0) {
+                    [weakSelf.conditionView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.height.mas_equalTo(30.0f);
+                    }];
+                    weakSelf.closeBtn.hidden = NO;
+                }else{
+                    [weakSelf.conditionView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.height.mas_equalTo(0.0f);
+                    }];
+                    weakSelf.closeBtn.hidden = YES;
+                }
             };
             _filtrateView;
         })];
@@ -250,7 +258,7 @@
             make.bottom.mas_equalTo(weakSelf.view.mas_bottom);
         }];
     }else{
-        [_filtrateView reloadDataWithStatusArray:@[@"未审核",@"审核中",@"审核通过",@"合作中",@"完成"] typeArray:_typeModel.data];
+        [_filtrateView reloadDataWithStatusArray:@[@"未审核",@"审核中",@"审核通过",@"合作中",@"合作完成"] typeArray:_typeModel.data];
         _filtrateView.hidden = NO;
     }
 }
@@ -280,5 +288,23 @@
     detailVC.flag = @"topic";
     [self.navigationController pushViewController:detailVC animated:YES];
 }
+
+
+- (NSString *)traslteWithString:(NSString *)index{
+    NSString *str = @"";;
+    if ([index isEqualToString:@"100"]) {
+        str = @"未审核";
+    }else if ([index isEqualToString:@"101"]){
+        str = @"审核中";
+    }else if ([index isEqualToString:@"102"]){
+        str = @"审核通过";
+    }else if ([index isEqualToString:@"103"]){
+        str = @"合作中";
+    }else if ([index isEqualToString:@"104"]){
+        str = @"合作完成";
+    }
+    return str;
+}
+
 
 @end

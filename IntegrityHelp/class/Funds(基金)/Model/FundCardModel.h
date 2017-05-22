@@ -26,6 +26,6 @@
 @property (nonatomic,strong) NSString<Optional> *Id;
 @property (nonatomic,strong) NSString<Optional> *Name;
 @property (nonatomic,strong) NSString<Optional> *Uid;
-@property(nonatomic,assign) BOOL isSelect;
+@property (nonatomic,strong) NSString<Optional> *flag;
 
 @end

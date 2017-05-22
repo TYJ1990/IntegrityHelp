@@ -450,7 +450,7 @@
     if (indexPath.row == 0) {
         return 110;
     }else if (indexPath.row == 2){
-        if ([_detailModel.Ff_id integerValue] == 1) {
+        if ([_detailModel.Ff_id boolValue]) {
             if ([_detailModel.Ff_review integerValue] == 1) {
                 CGFloat height = [TXUtilsString AutoHeight:_detailModel.F_no font:14.0 andCGsize:CGSizeMake(ScreenW - 90, 1000)];
                 if (_index == 3) {

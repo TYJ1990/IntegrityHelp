@@ -50,6 +50,21 @@
 		021A18611EB32DE500526477 /* OwnerTruthNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A185F1EB32DE500526477 /* OwnerTruthNameViewController.m */; };
 		021A18621EB32DE500526477 /* OwnerTruthNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021A18601EB32DE500526477 /* OwnerTruthNameViewController.xib */; };
 		021A18641EB496EC00526477 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021A18631EB496EC00526477 /* Launch Screen.storyboard */; };
+		023856101ED2777E0036AEDA /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238560F1ED2777E0036AEDA /* AlipaySDK.framework */; };
+		023856121ED277960036AEDA /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 023856111ED277960036AEDA /* AlipaySDK.bundle */; };
+		023856141ED277F50036AEDA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856131ED277F50036AEDA /* libc++.tbd */; };
+		023856161ED277FD0036AEDA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856151ED277FD0036AEDA /* libz.tbd */; };
+		023856181ED2780E0036AEDA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856171ED2780E0036AEDA /* SystemConfiguration.framework */; };
+		0238561A1ED278190036AEDA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856191ED278190036AEDA /* CoreTelephony.framework */; };
+		0238561C1ED278240036AEDA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238561B1ED278240036AEDA /* QuartzCore.framework */; };
+		0238561E1ED278300036AEDA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238561D1ED278300036AEDA /* CoreText.framework */; };
+		023856201ED2783C0036AEDA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238561F1ED2783C0036AEDA /* CoreGraphics.framework */; };
+		023856221ED278490036AEDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856211ED278490036AEDA /* UIKit.framework */; };
+		023856241ED278660036AEDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856231ED278660036AEDA /* Foundation.framework */; };
+		023856261ED2786F0036AEDA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856251ED2786F0036AEDA /* CFNetwork.framework */; };
+		023856281ED2787C0036AEDA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856271ED2787C0036AEDA /* CoreMotion.framework */; };
+		0238562B1ED2860D0036AEDA /* PaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 023856291ED2860D0036AEDA /* PaymentManager.m */; };
+		0238562E1ED287570036AEDA /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 0238562D1ED287570036AEDA /* Order.m */; };
 		02662FBE1EAF087F00F45E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02662FBD1EAF087F00F45E36 /* main.m */; };
 		02662FD71EAF087F00F45E36 /* IntegrityHelpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02662FD61EAF087F00F45E36 /* IntegrityHelpTests.m */; };
 		02662FE21EAF087F00F45E36 /* IntegrityHelpUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02662FE11EAF087F00F45E36 /* IntegrityHelpUITests.m */; };
@@ -119,6 +134,9 @@
 		026F93D91EC44E8600D8A134 /* QBVideoIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F93B01EC44E8600D8A134 /* QBVideoIndicatorView.m */; };
 		026F93DA1EC44E8600D8A134 /* SelectPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F93B31EC44E8600D8A134 /* SelectPicture.m */; };
 		026F93DB1EC44E8600D8A134 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F93B51EC44E8600D8A134 /* UIView+ViewController.m */; };
+		02842BC71ECFD39F001A1DDF /* FundAddCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02842BC51ECFD39F001A1DDF /* FundAddCardViewController.m */; };
+		02842BC81ECFD39F001A1DDF /* FundAddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02842BC61ECFD39F001A1DDF /* FundAddCardViewController.xib */; };
+		02842BCB1ECFF063001A1DDF /* XFCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02842BCA1ECFF063001A1DDF /* XFCountDownButton.m */; };
 		02A71E241EB960310060DCFB /* UIActionSheet+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A71E1B1EB960310060DCFB /* UIActionSheet+LBXAlertAction.m */; };
 		02A71E251EB960310060DCFB /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A71E1D1EB960310060DCFB /* UIAlertController+supportedInterfaceOrientations.m */; };
 		02A71E261EB960310060DCFB /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A71E1F1EB960310060DCFB /* UIAlertView+LBXAlertAction.m */; };
@@ -293,6 +311,23 @@
 		021A185F1EB32DE500526477 /* OwnerTruthNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerTruthNameViewController.m; sourceTree = "<group>"; };
 		021A18601EB32DE500526477 /* OwnerTruthNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OwnerTruthNameViewController.xib; sourceTree = "<group>"; };
 		021A18631EB496EC00526477 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0238560F1ED2777E0036AEDA /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		023856111ED277960036AEDA /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		023856131ED277F50036AEDA /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		023856151ED277FD0036AEDA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		023856171ED2780E0036AEDA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		023856191ED278190036AEDA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0238561B1ED278240036AEDA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0238561D1ED278300036AEDA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0238561F1ED2783C0036AEDA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		023856211ED278490036AEDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		023856231ED278660036AEDA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		023856251ED2786F0036AEDA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		023856271ED2787C0036AEDA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		023856291ED2860D0036AEDA /* PaymentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentManager.m; sourceTree = "<group>"; };
+		0238562A1ED2860D0036AEDA /* PaymentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentManager.h; sourceTree = "<group>"; };
+		0238562C1ED287570036AEDA /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		0238562D1ED287570036AEDA /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		02662FB91EAF087F00F45E36 /* IntegrityHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegrityHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02662FBD1EAF087F00F45E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02662FCD1EAF087F00F45E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
@@ -426,6 +461,11 @@
 		026F93B31EC44E8600D8A134 /* SelectPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPicture.m; sourceTree = "<group>"; };
 		026F93B41EC44E8600D8A134 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
 		026F93B51EC44E8600D8A134 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		02842BC41ECFD39F001A1DDF /* FundAddCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundAddCardViewController.h; sourceTree = "<group>"; };
+		02842BC51ECFD39F001A1DDF /* FundAddCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundAddCardViewController.m; sourceTree = "<group>"; };
+		02842BC61ECFD39F001A1DDF /* FundAddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundAddCardViewController.xib; sourceTree = "<group>"; };
+		02842BC91ECFF063001A1DDF /* XFCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFCountDownButton.h; sourceTree = "<group>"; };
+		02842BCA1ECFF063001A1DDF /* XFCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFCountDownButton.m; sourceTree = "<group>"; };
 		02A71E1A1EB960310060DCFB /* UIActionSheet+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LBXAlertAction.h"; sourceTree = "<group>"; };
 		02A71E1B1EB960310060DCFB /* UIActionSheet+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LBXAlertAction.m"; sourceTree = "<group>"; };
 		02A71E1C1EB960310060DCFB /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
@@ -571,7 +611,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023856281ED2787C0036AEDA /* CoreMotion.framework in Frameworks */,
+				023856261ED2786F0036AEDA /* CFNetwork.framework in Frameworks */,
+				023856241ED278660036AEDA /* Foundation.framework in Frameworks */,
+				023856221ED278490036AEDA /* UIKit.framework in Frameworks */,
+				023856201ED2783C0036AEDA /* CoreGraphics.framework in Frameworks */,
+				0238561E1ED278300036AEDA /* CoreText.framework in Frameworks */,
+				0238561C1ED278240036AEDA /* QuartzCore.framework in Frameworks */,
+				0238561A1ED278190036AEDA /* CoreTelephony.framework in Frameworks */,
+				023856181ED2780E0036AEDA /* SystemConfiguration.framework in Frameworks */,
+				023856161ED277FD0036AEDA /* libz.tbd in Frameworks */,
+				023856141ED277F50036AEDA /* libc++.tbd in Frameworks */,
 				0879263C8A66269FF6A02A2E /* libPods-IntegrityHelp.a in Frameworks */,
+				023856101ED2777E0036AEDA /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1086,8 @@
 				021A16D21EB0BBCA00526477 /* UIView+Five.m */,
 				021A16CE1EB0B95A00526477 /* Utils.h */,
 				021A16CF1EB0B95A00526477 /* Utils.m */,
+				02842BC91ECFF063001A1DDF /* XFCountDownButton.h */,
+				02842BCA1ECFF063001A1DDF /* XFCountDownButton.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1129,12 +1183,17 @@
 		026630001EAF0C4100F45E36 /* Thirds */ = {
 			isa = PBXGroup;
 			children = (
+				0238562A1ED2860D0036AEDA /* PaymentManager.h */,
+				023856291ED2860D0036AEDA /* PaymentManager.m */,
 				021A16731EB0465C00526477 /* WBPopOverView.h */,
 				021A16741EB0465C00526477 /* WBPopOverView.m */,
 				026F934B1EC3F08300D8A134 /* TXUtilsString.h */,
 				026F934C1EC3F08300D8A134 /* TXUtilsString.m */,
 				02A71E6D1EBC517C0060DCFB /* UIViewExt.h */,
 				02A71E6E1EBC517C0060DCFB /* UIViewExt.m */,
+				0238562C1ED287570036AEDA /* Order.h */,
+				0238562D1ED287570036AEDA /* Order.m */,
+				023856111ED277960036AEDA /* AlipaySDK.bundle */,
 				02F9D3131EC4B72700711AFC /* SDPhotoBrowser */,
 				02A71E291EB961CF0060DCFB /* 扫描 */,
 				02A71E181EB960310060DCFB /* LBXAlertAction */,
@@ -1197,6 +1256,9 @@
 				02F9D3521ECD40A900711AFC /* FundPeriodViewController.m */,
 				02F9D3541ECD77AB00711AFC /* FundCardViewController.h */,
 				02F9D3551ECD77AB00711AFC /* FundCardViewController.m */,
+				02842BC41ECFD39F001A1DDF /* FundAddCardViewController.h */,
+				02842BC51ECFD39F001A1DDF /* FundAddCardViewController.m */,
+				02842BC61ECFD39F001A1DDF /* FundAddCardViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1633,6 +1695,18 @@
 		C5F058BCD26144D50413B146 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				023856271ED2787C0036AEDA /* CoreMotion.framework */,
+				023856251ED2786F0036AEDA /* CFNetwork.framework */,
+				023856231ED278660036AEDA /* Foundation.framework */,
+				023856211ED278490036AEDA /* UIKit.framework */,
+				0238561F1ED2783C0036AEDA /* CoreGraphics.framework */,
+				0238561D1ED278300036AEDA /* CoreText.framework */,
+				0238561B1ED278240036AEDA /* QuartzCore.framework */,
+				023856191ED278190036AEDA /* CoreTelephony.framework */,
+				023856171ED2780E0036AEDA /* SystemConfiguration.framework */,
+				023856151ED277FD0036AEDA /* libz.tbd */,
+				023856131ED277F50036AEDA /* libc++.tbd */,
+				0238560F1ED2777E0036AEDA /* AlipaySDK.framework */,
 				CC492B89BD753E882C2771AC /* libPods-IntegrityHelp.a */,
 			);
 			name = Frameworks;
@@ -1799,9 +1873,11 @@
 				026F93CA1EC44E8600D8A134 /* qinmuqiao@3x.png in Resources */,
 				026F93B91EC44E8600D8A134 /* iconfont-fanhui@3x.png in Resources */,
 				026F93CE1EC44E8600D8A134 /* QBImagePicker.strings in Resources */,
+				023856121ED277960036AEDA /* AlipaySDK.bundle in Resources */,
 				02A71E611EBADACE0060DCFB /* Helper_DetailV.xib in Resources */,
 				026F93B71EC44E8600D8A134 /* compose_pic_add@3x.png in Resources */,
 				026F93D51EC44E8600D8A134 /* QBImagePicker.storyboard in Resources */,
+				02842BC81ECFD39F001A1DDF /* FundAddCardViewController.xib in Resources */,
 				021A17821EB2EA2000526477 /* IntegralView.xib in Resources */,
 				02F9D3501ECD287800711AFC /* FundsBorrowViewController.xib in Resources */,
 				021A16EC1EB1DA5700526477 /* OwnerMyInviteViewController.xib in Resources */,
@@ -1914,6 +1990,7 @@
 				026F93BD1EC44E8600D8A134 /* JKAssetsCollectionFooterView.m in Sources */,
 				02A71E241EB960310060DCFB /* UIActionSheet+LBXAlertAction.m in Sources */,
 				026F93D01EC44E8600D8A134 /* QBAlbumCell.m in Sources */,
+				02842BC71ECFD39F001A1DDF /* FundAddCardViewController.m in Sources */,
 				02662FBE1EAF087F00F45E36 /* main.m in Sources */,
 				02D9167B1EB856FA00FDCA5F /* memberInfo.m in Sources */,
 				021A16981EB062B500526477 /* SDCycleScrollView.m in Sources */,
@@ -1988,6 +2065,7 @@
 				026F93C91EC44E8600D8A134 /* MLImageCrop.m in Sources */,
 				02F9D3301EC69E0100711AFC /* OwnerSearchMemberViewController.m in Sources */,
 				02F9D3371ECBE27700711AFC /* OnerInfoViewController.m in Sources */,
+				0238562B1ED2860D0036AEDA /* PaymentManager.m in Sources */,
 				02A71E6B1EBC082F0060DCFB /* CheckingDetailTableViewCell.m in Sources */,
 				02A71E581EBAC9470060DCFB /* HelperSearchListTableViewCell.m in Sources */,
 				026F935F1EC4103E00D8A134 /* JFAssetHelper.m in Sources */,
@@ -1997,6 +2075,8 @@
 				021A17701EB206D900526477 /* OwnerIntegralViewController.m in Sources */,
 				02A71E411EB984370060DCFB /* FiltrateView.m in Sources */,
 				026F93BF1EC44E8600D8A134 /* JKAssetsGroupsView.m in Sources */,
+				02842BCB1ECFF063001A1DDF /* XFCountDownButton.m in Sources */,
+				0238562E1ED287570036AEDA /* Order.m in Sources */,
 				02A71E731EBC54F80060DCFB /* OwnerDecideViewController.m in Sources */,
 				021A16961EB062B500526477 /* TAPageControl.m in Sources */,
 				021A16C21EB0823600526477 /* LineStoreViewController.m in Sources */,
@@ -2176,7 +2256,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8BSSXGK28V;
 				ENABLE_BITCODE = NO;
-				GCC_PREFIX_HEADER = /Users/shl/Documents/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = /Users/shl/Desktop/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = IntegrityHelp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2195,7 +2279,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8BSSXGK28V;
 				ENABLE_BITCODE = NO;
-				GCC_PREFIX_HEADER = /Users/shl/Documents/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = /Users/shl/Desktop/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = IntegrityHelp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

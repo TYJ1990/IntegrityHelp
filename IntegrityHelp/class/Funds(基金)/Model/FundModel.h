@@ -16,7 +16,7 @@
 
 
 @interface FundModel : JSONModel
-@property(nonatomic,strong) NSArray<FundListModel,Optional> *data;
+@property(nonatomic,strong) NSMutableArray<FundListModel,Optional> *data;
 @end
 
 
