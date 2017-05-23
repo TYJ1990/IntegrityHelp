@@ -18,6 +18,7 @@
 @property(nonatomic,copy) UITableView *tableView;
 @property(nonatomic,strong) OwnerPointModel *pointModel;
 
+
 @end
 
 @implementation OwnerIntegralViewController

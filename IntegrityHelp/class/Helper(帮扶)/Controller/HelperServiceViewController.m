@@ -68,6 +68,7 @@
         _tableView.dataSource = self;
         _tableView.rowHeight = 133;
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            
             _pageNumber = 1;
             [self downloadData];
         }];

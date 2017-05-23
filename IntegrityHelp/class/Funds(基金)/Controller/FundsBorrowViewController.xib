@@ -140,7 +140,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xt-uY-1SN">
-                                    <rect key="frame" x="130.5" y="0.0" width="244.5" height="50"/>
+                                    <rect key="frame" x="130" y="0.0" width="244.5" height="50"/>
                                     <connections>
                                         <action selector="selectTime:" destination="-1" eventType="touchUpInside" id="mtw-FN-Icp"/>
                                     </connections>
@@ -283,18 +283,8 @@
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egs-Xc-Srl">
-                                    <rect key="frame" x="104.5" y="6.5" width="78.5" height="78"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="Egs-Xc-Srl" secondAttribute="height" multiplier="1:1" id="p05-R9-Ren"/>
-                                    </constraints>
-                                    <state key="normal" image="fund_add"/>
-                                    <connections>
-                                        <action selector="addImage:" destination="-1" eventType="touchUpInside" id="3hY-T4-huT"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFR-PV-Ss5">
-                                    <rect key="frame" x="193" y="6.5" width="78.5" height="78.5"/>
+                                    <rect key="frame" x="193" y="6" width="78.5" height="78.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="iFR-PV-Ss5" secondAttribute="height" multiplier="1:1" id="0fE-S7-ftv"/>
                                     </constraints>
@@ -304,7 +294,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKd-u7-vJa">
-                                    <rect key="frame" x="281.5" y="6.5" width="78.5" height="78.5"/>
+                                    <rect key="frame" x="281.5" y="6" width="78.5" height="78.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="EKd-u7-vJa" secondAttribute="height" multiplier="1:1" id="4sj-Gt-7C2"/>
                                     </constraints>
@@ -314,7 +304,7 @@
                                     </connections>
                                 </button>
                                 <button hidden="YES" opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePk-7X-gul">
-                                    <rect key="frame" x="158" y="1.5" width="30" height="30"/>
+                                    <rect key="frame" x="158" y="1" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="MTf-Xa-TOv"/>
                                         <constraint firstAttribute="height" constant="30" id="b5c-zc-Qj6"/>
@@ -324,19 +314,8 @@
                                         <action selector="deleteImg:" destination="-1" eventType="touchUpInside" id="EJp-sC-6d6"/>
                                     </connections>
                                 </button>
-                                <button hidden="YES" opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-vi-UND">
-                                    <rect key="frame" x="246.5" y="1.5" width="30" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="L0I-8Z-r86"/>
-                                        <constraint firstAttribute="width" constant="30" id="kuS-wW-zgx"/>
-                                    </constraints>
-                                    <state key="normal" image="delete_icon"/>
-                                    <connections>
-                                        <action selector="deleteImg:" destination="-1" eventType="touchUpInside" id="c1t-Wm-rDH"/>
-                                    </connections>
-                                </button>
                                 <button hidden="YES" opaque="NO" tag="3000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af3-sJ-38X">
-                                    <rect key="frame" x="335" y="1.5" width="30" height="30"/>
+                                    <rect key="frame" x="335" y="1" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="5Zd-es-daF"/>
                                         <constraint firstAttribute="width" constant="30" id="U6r-hF-9MU"/>
@@ -344,6 +323,16 @@
                                     <state key="normal" image="delete_icon"/>
                                     <connections>
                                         <action selector="deleteImg:" destination="-1" eventType="touchUpInside" id="iwC-HC-oDq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egs-Xc-Srl">
+                                    <rect key="frame" x="104.5" y="6" width="78.5" height="78"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Egs-Xc-Srl" secondAttribute="height" multiplier="1:1" id="p05-R9-Ren"/>
+                                    </constraints>
+                                    <state key="normal" image="fund_add"/>
+                                    <connections>
+                                        <action selector="addImage:" destination="-1" eventType="touchUpInside" id="3hY-T4-huT"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -357,8 +346,6 @@
                                 <constraint firstItem="j9r-t7-hG5" firstAttribute="centerY" secondItem="DU6-qb-RAr" secondAttribute="centerY" id="DV5-Q7-fgk"/>
                                 <constraint firstItem="Egs-Xc-Srl" firstAttribute="centerY" secondItem="DU6-qb-RAr" secondAttribute="centerY" id="Hka-Sa-U1v"/>
                                 <constraint firstItem="EKd-u7-vJa" firstAttribute="width" secondItem="iFR-PV-Ss5" secondAttribute="width" id="Hum-Dk-Bku"/>
-                                <constraint firstItem="8i0-vi-UND" firstAttribute="trailing" secondItem="iFR-PV-Ss5" secondAttribute="trailing" constant="5" id="Iwq-7o-Vfy"/>
-                                <constraint firstItem="iFR-PV-Ss5" firstAttribute="top" secondItem="8i0-vi-UND" secondAttribute="top" constant="5" id="Lhz-h9-hEN"/>
                                 <constraint firstAttribute="height" constant="90" id="Ntu-pV-SpU"/>
                                 <constraint firstItem="Egs-Xc-Srl" firstAttribute="leading" secondItem="j9r-t7-hG5" secondAttribute="trailing" constant="30" id="SP8-of-b5c"/>
                                 <constraint firstItem="EKd-u7-vJa" firstAttribute="leading" secondItem="iFR-PV-Ss5" secondAttribute="trailing" constant="10" id="VvZ-em-mzf"/>
@@ -396,6 +383,17 @@
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button hidden="YES" opaque="NO" tag="2000" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-vi-UND">
+                            <rect key="frame" x="246" y="393" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="L0I-8Z-r86"/>
+                                <constraint firstAttribute="width" constant="30" id="kuS-wW-zgx"/>
+                            </constraints>
+                            <state key="normal" image="delete_icon"/>
+                            <connections>
+                                <action selector="deleteImg:" destination="-1" eventType="touchUpInside" id="c1t-Wm-rDH"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="khu-N0-s3U" firstAttribute="leading" secondItem="Ufr-PL-cnI" secondAttribute="leading" id="0xa-Cu-kkI"/>
@@ -433,6 +431,7 @@
                         <constraint firstAttribute="trailing" secondItem="9VE-Dc-wym" secondAttribute="trailing" id="TTV-OF-tiY"/>
                         <constraint firstItem="6LW-Nc-IQi" firstAttribute="leading" secondItem="Ufr-PL-cnI" secondAttribute="leading" constant="17" id="VBQ-9t-b1U"/>
                         <constraint firstItem="prZ-2R-Vif" firstAttribute="top" secondItem="mhS-T7-top" secondAttribute="bottom" id="WKI-Gl-A3H"/>
+                        <constraint firstItem="8i0-vi-UND" firstAttribute="trailing" secondItem="iFR-PV-Ss5" secondAttribute="trailing" constant="5" id="ag4-Ex-yXo"/>
                         <constraint firstItem="ZST-Na-LS5" firstAttribute="leading" secondItem="Ufr-PL-cnI" secondAttribute="leading" id="bHi-ar-kDI"/>
                         <constraint firstItem="ut9-5a-gdN" firstAttribute="leading" secondItem="Ufr-PL-cnI" secondAttribute="leading" constant="17" id="bgx-r3-pVb"/>
                         <constraint firstItem="380-Uh-9de" firstAttribute="bottom" secondItem="mhS-T7-top" secondAttribute="bottom" constant="-5" id="eOe-G6-of6"/>
@@ -441,6 +440,7 @@
                         <constraint firstItem="t5v-Xb-kSF" firstAttribute="leading" secondItem="Ufr-PL-cnI" secondAttribute="leading" id="hWW-wZ-Ren"/>
                         <constraint firstAttribute="trailing" secondItem="LIx-zr-Lmo" secondAttribute="trailing" id="heS-fP-Zbu"/>
                         <constraint firstItem="6LW-Nc-IQi" firstAttribute="top" secondItem="DU6-qb-RAr" secondAttribute="bottom" constant="5" id="i3f-ZN-gCu"/>
+                        <constraint firstItem="iFR-PV-Ss5" firstAttribute="top" secondItem="8i0-vi-UND" secondAttribute="top" constant="5" id="iX0-C8-z6h"/>
                         <constraint firstItem="DU6-qb-RAr" firstAttribute="leading" secondItem="Ufr-PL-cnI" secondAttribute="leading" id="j6C-93-vo9"/>
                         <constraint firstItem="XGD-ol-dIe" firstAttribute="top" secondItem="6LW-Nc-IQi" secondAttribute="bottom" constant="20" id="l2Q-R7-myE"/>
                         <constraint firstItem="LIx-zr-Lmo" firstAttribute="leading" secondItem="Ufr-PL-cnI" secondAttribute="leading" id="lUR-mA-S3T"/>
@@ -466,7 +466,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-2068" y="-726"/>
+            <point key="canvasLocation" x="-2201" y="-733"/>
         </view>
     </objects>
     <resources>

@@ -19,6 +19,8 @@
 
 - (void)getChartsWithValueArray:(NSArray *)valueArr nameArray:(NSArray *)nameArr;
 
+- (void)getChartsWithPropetyValueArray:(NSArray *)valueArr nameArray:(NSArray *)nameArr;
+
 
 
 @end

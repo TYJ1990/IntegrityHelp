@@ -24,6 +24,8 @@
 #import "ApliyCardViewController.h"
 #import "OwnerSignViewController.h"
 #import "OwnerBossViewController.h"
+#import "OwnerPropetyViewController.h"
+
 
 @interface OwnerViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)OwnerHeadView *headView;
@@ -214,7 +216,11 @@
             }
                 break;
             case 4:{
-                
+                OwnerPropetyViewController *integralVC = [[OwnerPropetyViewController alloc] init];
+                integralVC.hidesBottomBarWhenPushed = YES;
+                integralVC.icon = _headView.icon.image;
+                integralVC.name = _model.u_name;
+                [self.navigationController pushViewController:integralVC animated:YES];
             }
                 break;
             case 5:{
