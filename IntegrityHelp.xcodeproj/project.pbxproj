@@ -61,7 +61,8 @@
 		021CA7CB1ED3CB290062ED44 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 021CA7CA1ED3CB290062ED44 /* libsqlite3.tbd */; };
 		021CA7CF1ED3CB450062ED44 /* AlicloudUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021CA7CC1ED3CB450062ED44 /* AlicloudUtils.framework */; };
 		021CA7D01ED3CB450062ED44 /* CloudPushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021CA7CD1ED3CB450062ED44 /* CloudPushSDK.framework */; };
-		021CA7D11ED3CB450062ED44 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021CA7CE1ED3CB450062ED44 /* UTDID.framework */; };
+		021CA7DC1ED412370062ED44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856211ED278490036AEDA /* UIKit.framework */; };
+		021CA7DD1ED415860062ED44 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021CA7CE1ED3CB450062ED44 /* UTDID.framework */; };
 		023856101ED2777E0036AEDA /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238560F1ED2777E0036AEDA /* AlipaySDK.framework */; };
 		023856121ED277960036AEDA /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 023856111ED277960036AEDA /* AlipaySDK.bundle */; };
 		023856141ED277F50036AEDA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856131ED277F50036AEDA /* libc++.tbd */; };
@@ -71,7 +72,6 @@
 		0238561C1ED278240036AEDA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238561B1ED278240036AEDA /* QuartzCore.framework */; };
 		0238561E1ED278300036AEDA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238561D1ED278300036AEDA /* CoreText.framework */; };
 		023856201ED2783C0036AEDA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238561F1ED2783C0036AEDA /* CoreGraphics.framework */; };
-		023856221ED278490036AEDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856211ED278490036AEDA /* UIKit.framework */; };
 		023856241ED278660036AEDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856231ED278660036AEDA /* Foundation.framework */; };
 		023856261ED2786F0036AEDA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856251ED2786F0036AEDA /* CFNetwork.framework */; };
 		023856281ED2787C0036AEDA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856271ED2787C0036AEDA /* CoreMotion.framework */; };
@@ -720,20 +720,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021CA7DD1ED415860062ED44 /* UTDID.framework in Frameworks */,
+				021CA7DC1ED412370062ED44 /* UIKit.framework in Frameworks */,
 				021CA7CB1ED3CB290062ED44 /* libsqlite3.tbd in Frameworks */,
 				021CA7D01ED3CB450062ED44 /* CloudPushSDK.framework in Frameworks */,
 				021CA7C91ED3CB0E0062ED44 /* libresolv.tbd in Frameworks */,
 				023856281ED2787C0036AEDA /* CoreMotion.framework in Frameworks */,
 				023856261ED2786F0036AEDA /* CFNetwork.framework in Frameworks */,
 				023856241ED278660036AEDA /* Foundation.framework in Frameworks */,
-				023856221ED278490036AEDA /* UIKit.framework in Frameworks */,
 				023856201ED2783C0036AEDA /* CoreGraphics.framework in Frameworks */,
 				021CA7C71ED2F2F50062ED44 /* libssl.a in Frameworks */,
 				0238561E1ED278300036AEDA /* CoreText.framework in Frameworks */,
 				021CA7C61ED2F2F50062ED44 /* libcrypto.a in Frameworks */,
 				0238561C1ED278240036AEDA /* QuartzCore.framework in Frameworks */,
 				021CA7CF1ED3CB450062ED44 /* AlicloudUtils.framework in Frameworks */,
-				021CA7D11ED3CB450062ED44 /* UTDID.framework in Frameworks */,
 				0238561A1ED278190036AEDA /* CoreTelephony.framework in Frameworks */,
 				023856181ED2780E0036AEDA /* SystemConfiguration.framework in Frameworks */,
 				023856161ED277FD0036AEDA /* libz.tbd in Frameworks */,
@@ -2564,7 +2564,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				GCC_PREFIX_HEADER = /Users/shl/Desktop/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/shl/Documents/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -2594,6 +2594,68 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IntegrityHelp/class/Thirds/AliUtil",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DZNEmptyDataSet\"",
+					"-l\"GPUImage\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"JSONModel\"",
+					"-l\"JTCalendar\"",
+					"-l\"LBXScan\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDWebImage\"",
+					"-l\"TTTAttributedLabel\"",
+					"-l\"ZBarSDK\"",
+					"-l\"c++\"",
+					"-l\"iOS-Echarts\"",
+					"-l\"iconv\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baida.help;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2615,7 +2677,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				GCC_PREFIX_HEADER = /Users/shl/Desktop/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/shl/Documents/IntegrityHelp/IntegrityHelp/class/Other/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -2645,6 +2707,68 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IntegrityHelp/class/Thirds/AliUtil",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DZNEmptyDataSet\"",
+					"-l\"GPUImage\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"JSONModel\"",
+					"-l\"JTCalendar\"",
+					"-l\"LBXScan\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDWebImage\"",
+					"-l\"TTTAttributedLabel\"",
+					"-l\"ZBarSDK\"",
+					"-l\"c++\"",
+					"-l\"iOS-Echarts\"",
+					"-l\"iconv\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baida.help;
 				PRODUCT_NAME = "$(TARGET_NAME)";
