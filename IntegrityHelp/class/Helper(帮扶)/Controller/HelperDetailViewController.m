@@ -9,6 +9,7 @@
 #import "HelperDetailViewController.h"
 #import "Helper_DetailV.h"
 #import "HelpDetailModel.h"
+#import "OnerInfoViewController.h"
 
 @interface HelperDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) Helper_DetailV *detailView;
@@ -52,6 +53,7 @@
         if (state == SESSIONSUCCESS) {
             NSError *error;
             _detailModel = [[HelpDetailModel alloc] initWithDictionary:response[@"data"] error:&error];
+            [_detailView.heardBtn addTarget:self action:@selector(checkInfo) forControlEvents:(UIControlEventTouchUpInside)];
             if (!error) {
                 [_detailView initWithModel:_detailModel];
                 _detailView.username = [Utils getValueForKey:@"name"];
@@ -66,6 +68,11 @@
     }];
 }
 
+- (void)checkInfo{
+    OnerInfoViewController *infoVC = [[OnerInfoViewController alloc] init];
+    infoVC.oid = _detailModel.Id;
+    [self.navigationController pushViewController:infoVC animated:YES];
+}
 
 
 - (void)setUI{

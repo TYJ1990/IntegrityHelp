@@ -19,6 +19,7 @@
 #import "Order.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "RSADataSigner.h"
+#import "OwnerTruthNameViewController.h"
 
 
 @interface FundsViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
@@ -129,54 +130,60 @@
 }
 
 - (void)donationAction{
-    [self.view addSubview:({
-        _grayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH)];
-        _grayView.backgroundColor = [UIColor blackColor];
-        _grayView.alpha = 0;
-        _grayView;
-    })];
-    
-    [self.view addSubview:({
-        _donationView = [[[NSBundle mainBundle] loadNibNamed:@"FundDonationView" owner:nil options:nil] firstObject];
-        _donationView.frame = CGRectMake(0, ScreenH, ScreenW, 205);
-        _donationView.alpha = 0;
-        _donationView.otherTF.borderStyle= UITextBorderStyleNone;
-        _donationView.otherTF.delegate = self;
-        _donationView.twentyBtn.layer.cornerRadius = 5;
-        _donationView.twentyBtn.layer.masksToBounds = YES;
-        _donationView.twentyBtn.layer.borderColor = [UIColor colorWithHex:0xdfdfdf].CGColor;
-        _donationView.twentyBtn.layer.borderWidth = 1.5;
-        _donationView.fiftyBtn.layer.cornerRadius = 5;
-        _donationView.fiftyBtn.layer.masksToBounds = YES;
-        _donationView.fiftyBtn.layer.borderColor = [UIColor colorWithHex:0xdfdfdf].CGColor;
-        _donationView.fiftyBtn.layer.borderWidth = 1.5;
-        _donationView.proticolBtn.layer.cornerRadius = 5;
-        _donationView.proticolBtn.layer.masksToBounds = YES;
-        _donationView.otherNum.layer.borderColor = [UIColor colorWithHex:0xdfdfdf].CGColor;
-        _donationView.otherNum.layer.borderWidth = 1.5;
-        _donationView.otherNum.layer.cornerRadius = 5;
-        _donationView.otherNum.layer.masksToBounds = YES;
-        _donationView.donationBtn.layer.cornerRadius = 5;
-        _donationView.donationBtn.layer.masksToBounds = YES;
-        [_donationView.twentyBtn addTarget:self action:@selector(selectTwent) forControlEvents:(UIControlEventTouchUpInside)];
-        [_donationView.fiftyBtn addTarget:self action:@selector(selectFifty) forControlEvents:(UIControlEventTouchUpInside)];
-        [_donationView.agreeProticol addTarget:self action:@selector(agree) forControlEvents:(UIControlEventTouchUpInside)];
-        [_donationView.proticolBtn addTarget:self action:@selector(proticol) forControlEvents:(UIControlEventTouchUpInside)];
-        [_donationView.donationBtn addTarget:self action:@selector(donationClick) forControlEvents:(UIControlEventTouchUpInside)];
-        _donationView;
-    })];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        _grayView.alpha = 0.6;
-        _donationView.alpha = 1;
-        _donationView.frame = CGRectMake(0, ScreenH-205-49-64, ScreenW, 205);
-    }];
-    
     [self.view loadingOnAnyView];
-    [HYBNetworking postWithUrl:@"IosBorrow/reCharge" refreshCache:NO params:@{@"u_id":[Utils getValueForKey:@"u_id"],@"Ty":@1,@"Money":@"0.01"} success:^(id response) {
-        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:YES];
+    [HYBNetworking postWithUrl:@"IosBorrow/realName" refreshCache:NO params:@{@"u_id":[Utils getValueForKey:@"u_id"],@"u_pwd":[Utils getValueForKey:@"pwdMd5"]} success:^(id response) {
+        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:NO];
         if (state == SESSIONSUCCESS) {
-            _sn = response[@"data"];
+            [self.view addSubview:({
+                _grayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH)];
+                _grayView.backgroundColor = [UIColor blackColor];
+                _grayView.alpha = 0;
+                _grayView;
+            })];
+            
+            [self.view addSubview:({
+                _donationView = [[[NSBundle mainBundle] loadNibNamed:@"FundDonationView" owner:nil options:nil] firstObject];
+                _donationView.frame = CGRectMake(0, ScreenH, ScreenW, 205);
+                _donationView.alpha = 0;
+                _donationView.otherTF.borderStyle= UITextBorderStyleNone;
+                _donationView.otherTF.delegate = self;
+                _donationView.twentyBtn.layer.cornerRadius = 5;
+                _donationView.twentyBtn.layer.masksToBounds = YES;
+                _donationView.twentyBtn.layer.borderColor = [UIColor colorWithHex:0xdfdfdf].CGColor;
+                _donationView.twentyBtn.layer.borderWidth = 1.5;
+                _donationView.fiftyBtn.layer.cornerRadius = 5;
+                _donationView.fiftyBtn.layer.masksToBounds = YES;
+                _donationView.fiftyBtn.layer.borderColor = [UIColor colorWithHex:0xdfdfdf].CGColor;
+                _donationView.fiftyBtn.layer.borderWidth = 1.5;
+                _donationView.proticolBtn.layer.cornerRadius = 5;
+                _donationView.proticolBtn.layer.masksToBounds = YES;
+                _donationView.otherNum.layer.borderColor = [UIColor colorWithHex:0xdfdfdf].CGColor;
+                _donationView.otherNum.layer.borderWidth = 1.5;
+                _donationView.otherNum.layer.cornerRadius = 5;
+                _donationView.otherNum.layer.masksToBounds = YES;
+                _donationView.donationBtn.layer.cornerRadius = 5;
+                _donationView.donationBtn.layer.masksToBounds = YES;
+                [_donationView.twentyBtn addTarget:self action:@selector(selectTwent) forControlEvents:(UIControlEventTouchUpInside)];
+                [_donationView.fiftyBtn addTarget:self action:@selector(selectFifty) forControlEvents:(UIControlEventTouchUpInside)];
+                [_donationView.agreeProticol addTarget:self action:@selector(agree) forControlEvents:(UIControlEventTouchUpInside)];
+                [_donationView.proticolBtn addTarget:self action:@selector(proticol) forControlEvents:(UIControlEventTouchUpInside)];
+                [_donationView.donationBtn addTarget:self action:@selector(donationClick) forControlEvents:(UIControlEventTouchUpInside)];
+                _donationView;
+            })];
+            
+            [UIView animateWithDuration:0.5 animations:^{
+                _grayView.alpha = 0.6;
+                _donationView.alpha = 1;
+                _donationView.frame = CGRectMake(0, ScreenH-205-49-64, ScreenW, 205);
+            }];
+            
+        }else{
+            BaseAlertControler *alert = [[BaseAlertControler alloc] init];
+            UIAlertController *alertC = [alert alertmessage:@"前往" Title:@"请先完成实名认证" andBlock:^{
+                OwnerTruthNameViewController *truthNameVC = [[OwnerTruthNameViewController alloc] init];
+                [self.navigationController pushViewController:truthNameVC animated:YES];
+            }];
+            [self presentViewController:alertC animated:YES completion:nil];
         }
     } fail:^(NSError *error) {
         [self.view removeAnyView];
@@ -184,9 +191,23 @@
 }
 
 - (void)borrowAction{
-    NSLog(@"right");
-    FundsBorrowViewController *borrowVC = [[FundsBorrowViewController alloc] init];
-    [self.navigationController pushViewController:borrowVC animated:YES];
+    [self.view loadingOnAnyView];
+    [HYBNetworking postWithUrl:@"IosBorrow/realName" refreshCache:NO params:@{@"u_id":[Utils getValueForKey:@"u_id"],@"u_pwd":[Utils getValueForKey:@"pwdMd5"]} success:^(id response) {
+        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:NO];
+        if (state == SESSIONSUCCESS) {
+            FundsBorrowViewController *borrowVC = [[FundsBorrowViewController alloc] init];
+            [self.navigationController pushViewController:borrowVC animated:YES];
+        }else{
+            BaseAlertControler *alert = [[BaseAlertControler alloc] init];
+            UIAlertController *alertC = [alert alertmessage:@"前往" Title:@"请先完成实名认证" andBlock:^{
+                OwnerTruthNameViewController *truthNameVC = [[OwnerTruthNameViewController alloc] init];
+                [self.navigationController pushViewController:truthNameVC animated:YES];
+            }];
+            [self presentViewController:alertC animated:YES completion:nil];
+        }
+    } fail:^(NSError *error) {
+        [self.view removeAnyView];
+    }];
 }
 
 - (void)selectTwent{
@@ -199,6 +220,7 @@
     _donationView.otherImg.hidden = YES;
 }
 
+
 - (void)selectFifty{
     _type = @"fifty";
     _donationView.otherTF.text = @"";
@@ -208,6 +230,7 @@
     _donationView.twentyImg.hidden = YES;
     _donationView.otherImg.hidden = YES;
 }
+
 
 - (void)agree{
     if (_selected) {
@@ -222,6 +245,7 @@
     
 }
 
+
 - (void)donationClick{
     if (_selected) {
         return [self.view Message:@"请您同意捐款协议哦" HiddenAfterDelay:0.7];
@@ -230,7 +254,6 @@
         return [self.view Message:@"请选择诚信币哦" HiddenAfterDelay:0.7];
     }
     
-    [self.view Message:@"捐赠成功" HiddenAfterDelay:0.7];
     [UIView animateWithDuration:0.5 animations:^{
         _grayView.alpha = 0;
         _donationView.alpha = 0;
@@ -240,11 +263,27 @@
         [_donationView removeFromSuperview];
     }];
     
+    NSString *number;
+    if ([_type isEqualToString:@"twenty"]) {
+        number = @"20";
+    }else if ([_type isEqualToString:@"fifty"]){
+        number = @"50";
+    }else{
+        number = _donationView.otherTF.text;
+    }
     
-    
-    NSString *appScheme = @"xfalipay";
-    [[AlipaySDK defaultService] payOrder:_sn fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-        NSLog(@"reslut = %@",resultDic);
+    [self.view loadingOnAnyView];
+    [HYBNetworking postWithUrl:@"IosBorrow/reCharge" refreshCache:NO params:@{@"u_id":[Utils getValueForKey:@"u_id"],@"Ty":@1,@"Money":number} success:^(id response) {
+        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:YES];
+        if (state == SESSIONSUCCESS) {
+            _sn = response[@"data"];
+            NSString *appScheme = @"xfalipay";
+            [[AlipaySDK defaultService] payOrder:_sn fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+                NSLog(@"reslut = %@",resultDic);
+            }];
+        }
+    } fail:^(NSError *error) {
+        [self.view removeAnyView];
     }];
 }
 

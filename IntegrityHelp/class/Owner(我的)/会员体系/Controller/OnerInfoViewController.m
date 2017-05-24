@@ -16,6 +16,7 @@
 @property(nonatomic,strong) UIImageView *icon;
 @property(nonatomic,strong) UILabel *name;
 @property(nonatomic,strong) UILabel *phone;
+@property(nonatomic,strong) UIView *bottomView;
 
 @end
 
@@ -94,6 +95,44 @@
     }];
     
     _titleArray = @[@"真实姓名",@"出生年月",@"邮箱地址",@"所在行业",@"岗位",@"当前年薪",@"注册时间"];
+    
+    [self.view addSubview:({
+        _bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenH - 60 - 64, ScreenW, 60)];
+        _bottomView.backgroundColor = [[UIColor colorWithHex:0xf2f2f2] colorWithAlphaComponent:0.85];
+        _bottomView;
+    })];
+    
+    [_bottomView addSubview:({
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 1)];
+        line.backgroundColor = [UIColor colorWithHex:0xdfdfdf];
+        line;
+    })];
+    
+    [_bottomView addSubview:({
+        UIButton *sendMessegeBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        sendMessegeBtn.frame = CGRectMake(ScreenW/2 + 7.5, 10, (ScreenW-45)/2, 40);
+        sendMessegeBtn.layer.cornerRadius = 3;
+        sendMessegeBtn.layer.masksToBounds = YES;
+        sendMessegeBtn.backgroundColor = kMainColor;
+        [sendMessegeBtn setTitle:@"发消息" forState:(UIControlStateNormal)];
+        [sendMessegeBtn setTitleColor:kWhite forState:(UIControlStateNormal)];
+        sendMessegeBtn.titleLabel.font = kFont(15);
+        sendMessegeBtn;
+    })];
+    
+    [_bottomView addSubview:({
+        UIButton *detailBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        detailBtn.frame = CGRectMake(15, 10, (ScreenW-45)/2, 40);
+        detailBtn.layer.cornerRadius = 3;
+        detailBtn.layer.masksToBounds = YES;
+        detailBtn.backgroundColor = kWhite;
+        detailBtn.layer.borderColor = [UIColor colorWithHex:0xdfdfdf].CGColor;
+        detailBtn.layer.borderWidth = 1;
+        [detailBtn setTitle:@"查看帮扶历史" forState:(UIControlStateNormal)];
+        [detailBtn setTitleColor:kDarkText forState:(UIControlStateNormal)];
+        detailBtn.titleLabel.font = kFont(15);
+        detailBtn;
+    })];
 }
 
 
@@ -105,7 +144,7 @@
             NSError *error;
             _memberModel = [[MemberInfoModel alloc] initWithDictionary:response[@"data"] error:&error];
             if (!error) {
-                [_icon sd_setImageWithURL:[NSURL URLWithString:imageUrl(_memberModel.face)]];
+                [_icon sd_setImageWithURL:[NSURL URLWithString:imageUrl(_memberModel.face)] placeholderImage:[UIImage imageNamed:@"placeholder_person"]];
                 _name.text = _memberModel.name;
                 _phone.text = _memberModel.Tel;
                 [_tableview reloadData];

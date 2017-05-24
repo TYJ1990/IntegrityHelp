@@ -48,9 +48,8 @@
 
 - (IBAction)saveInfo:(id)sender {
     
-    if (_textView.text.length < 1) {
-        [self.view Message:@"请输入个性签名" HiddenAfterDelay:1];
-        return;
+    if (_textView.text.length == 0) {
+       _textView.text = @" ";
     }
     
     [self.view loadingOnAnyView];
@@ -64,6 +63,11 @@
     } fail:^(NSError *error) {
         [self.view removeAnyView];
     }];
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    _placeholder.hidden = YES;
+    return YES;
 }
 
 

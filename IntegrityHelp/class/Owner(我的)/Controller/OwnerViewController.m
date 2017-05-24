@@ -30,8 +30,8 @@
 @interface OwnerViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)OwnerHeadView *headView;
 @property(nonatomic,copy) UITableView *tableView;
-@property(nonatomic,strong) NSArray *titleArray;
-@property(nonatomic,strong) NSArray *imageArray;
+@property(nonatomic,strong) NSMutableArray *titleArray;
+@property(nonatomic,strong) NSMutableArray *imageArray;
 @property(nonatomic,strong) NSArray *menuTitle;
 @property(nonatomic,strong) NSArray *menuPic;
 @property (strong, nonatomic) WBPopOverView *wbpopView;
@@ -114,11 +114,13 @@
         _tableView.rowHeight = 50;
         _tableView.tableFooterView = [UIView new];
         _tableView.backgroundColor = kMainGray;
+//        [_tableView setEditing:YES animated:YES];
         _tableView;
     })];
     
-    _titleArray = @[@"我的邀请",@"会员体系",@"我的审核",@"我的主题",@"我的资产",@"我的基金",@"退出登录"];
-    _imageArray = @[@"owner_invite",@"owner_member",@"owner_select",@"owner_topic",@"owner_property",@"owner_funds",@"owner_exit"];
+    
+    _titleArray = [@[@"我的邀请",@"会员体系",@"我的审核",@"我的主题",@"我的资产",@"我的基金",@"退出登录"] mutableCopy];
+    _imageArray = [@[@"owner_invite",@"owner_member",@"owner_select",@"owner_topic",@"owner_property",@"owner_funds",@"owner_exit"] mutableCopy];
     _menuTitle = @[@"积分排行", @"签到", @"实名认证"];
     _menuPic = @[@"owner_integral", @"owner_list", @"owner_trueName"];
 }
@@ -137,7 +139,7 @@
                 [_headView.icon sd_setImageWithURL:[NSURL URLWithString:imageUrl(_model.u_avatar)] placeholderImage:[UIImage imageNamed:@"owner_header"]];
                 _headView.phone.text = _model.u_name;
                 _headView.code.text = _model.u_card;
-                _headView.sign.text = _model.u_content;
+                _headView.sign.text = [_model.u_content isEqualToString:@" "]?@"编辑个性签名🖌":_model.u_content.length>0?_model.u_content:@"编辑个性签名🖌";
                 if ([_model.u_profile integerValue] == 0 && _first == NO) {
                     _first = YES;
                     [self initCompleteView];
@@ -264,6 +266,19 @@
         [_wbpopView dismiss];
     }
 }
+
+//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+//    [_titleArray exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
+//    [_imageArray exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
+//}
+//
+//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return YES;
+//}
+//
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return  UITableViewCellEditingStyleNone;
+//}
 
 
 

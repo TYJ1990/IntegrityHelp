@@ -38,8 +38,10 @@
     scanVC.style = [StyleDIY qqStyle];
     //镜头拉远拉近功能
     scanVC.isVideoZoom = YES;
+    WS(weakSelf)
     scanVC.callBack = ^(NSString *qrStr){
         _inviteCode.text = qrStr;
+        [weakSelf returnBtnStatus];
     };
     [self.navigationController pushViewController:scanVC animated:YES];
 }
@@ -101,22 +103,14 @@
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    NSInteger name    = _username.text.length;
-    NSInteger phone   = _phoneNumber.text.length;
-    NSInteger pwd     = _pwd.text.length;
-    NSInteger pwdSure = _pwdRepet.text.length;
-    NSInteger invite  = _inviteCode.text.length;
-    
-    if ((name > 0) && (phone == 11) && (pwd >= 6) && (pwdSure >= 6) && (invite > 0) ){
-        _registBtn.enabled = YES;
-        _registBtn.backgroundColor = kMainColor;
-    } else {
-        _registBtn.enabled = NO;
-        _registBtn.backgroundColor = RGB(212,213,214);
-    }
+    [self returnBtnStatus];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self returnBtnStatus];
+}
+
+- (void)returnBtnStatus{
     NSInteger name    = _username.text.length;
     NSInteger phone   = _phoneNumber.text.length;
     NSInteger pwd     = _pwd.text.length;

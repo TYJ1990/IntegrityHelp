@@ -63,6 +63,7 @@ static NSString *kJKPhotoBrowserCellIdentifier = @"kJKPhotoBrowserCellIdentifier
     }
     
     self.checkButton.selected = !self.checkButton.selected;
+    [self hide:YES];
 }
 
 - (void)show:(BOOL)animated
@@ -204,7 +205,7 @@ static NSString *kJKPhotoBrowserCellIdentifier = @"kJKPhotoBrowserCellIdentifier
 
 - (UILabel *)numberLabel{
     if (!_numberLabel) {
-        _numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(floor((CGRectGetWidth(self.frame)-100)/2), 32, 100, 20)];
+        _numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(floor((CGRectGetWidth(self.frame)-100)/2), 22, 100, 20)];
         _numberLabel.backgroundColor = [UIColor clearColor];
         _numberLabel.textColor = [UIColor whiteColor];
         _numberLabel.textAlignment = NSTextAlignmentCenter;
@@ -214,16 +215,17 @@ static NSString *kJKPhotoBrowserCellIdentifier = @"kJKPhotoBrowserCellIdentifier
     return _numberLabel;
 }
 
+
 - (UIView *)topView{
     if (!_topView) {
-        _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 64)];
+        _topView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenH - 64, CGRectGetWidth(self.frame), 64)];
         _topView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.8];
         [_topView addSubview:self.numberLabel];
         
         UIImage  *img = [UIImage imageNamed:@"camera_edit_cut_cancel"];
         UIImage  *imgHigh = [UIImage imageNamed:@"camera_edit_cut_cancel_highlighted"];
         UIButton  *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(10, 20+floor((44-img.size.height)/2), img.size.width, img.size.height);
+        button.frame = CGRectMake(10, 10+floor((44-img.size.height)/2), img.size.width, img.size.height);
         [button setBackgroundImage:img forState:UIControlStateNormal];
         [button setBackgroundImage:imgHigh forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(closePhotoBrower) forControlEvents:UIControlEventTouchUpInside];

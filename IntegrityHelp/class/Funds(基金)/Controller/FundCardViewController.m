@@ -10,7 +10,7 @@
 #import "FundCardTableViewCell.h"
 #import "FundCardModel.h"
 #import "FundAddCardViewController.h"
-
+#import "OwnerTruthNameViewController.h"
 
 @interface FundCardViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableview;
@@ -173,28 +173,13 @@
         FundCardListModel *model = _cardModel.data[indexPath.row];
         model.flag = @"1";
     }else{
-        [self checking];
+        FundAddCardViewController *addVC = [[FundAddCardViewController alloc] init];
+        WS(weakSelf)
+        addVC.callBack = ^(){
+            [weakSelf downloadData];
+        };
+        [self.navigationController pushViewController:addVC animated:YES];
     }
-}
-
-- (void)checking{
-    [self.view loadingOnAnyView];
-    [HYBNetworking postWithUrl:@"IosBorrow/realName" refreshCache:NO params:@{@"u_id":[Utils getValueForKey:@"u_id"],@"u_pwd":[Utils getValueForKey:@"pwdMd5"]} success:^(id response) {
-        SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:YES];
-        if (state == SESSIONSUCCESS) {
-            FundAddCardViewController *addVC = [[FundAddCardViewController alloc] init];
-            WS(weakSelf)
-            addVC.callBack = ^(){
-                [weakSelf downloadData];
-            };
-            [self.navigationController pushViewController:addVC animated:YES];
-        }else{
-            
-        }
-    } fail:^(NSError *error) {
-        [self.view removeAnyView];
-    }];
-
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{

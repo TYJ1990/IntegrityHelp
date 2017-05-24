@@ -53,6 +53,7 @@
         _tableview.dataSource = self;
         _tableview.rowHeight = 55;
         [_tableview registerNib:[UINib nibWithNibName:@"OwnerPointTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
+        _tableview.tableFooterView = [UIView new];
         _tableview;
     })];
 }
@@ -74,7 +75,6 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
-    searchBar.text = @"";
     [self.view loadingOnAnyView];
     [HYBNetworking getWithUrl:@"IosIndex/pointList" refreshCache:NO params:@{@"keywords":searchBar.text} success:^(id response) {
         SESSIONSTATE state = [Utils getStatus:response View:self showSuccessMsg:NO showErrorMsg:YES];

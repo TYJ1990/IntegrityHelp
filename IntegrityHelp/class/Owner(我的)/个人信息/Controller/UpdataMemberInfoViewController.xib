@@ -133,7 +133,7 @@
                 <constraint firstItem="HkW-cw-74g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yKi-Ck-wcd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-538" y="-10"/>
+            <point key="canvasLocation" x="-149" y="-2"/>
         </view>
     </objects>
 </document>

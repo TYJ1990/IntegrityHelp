@@ -52,6 +52,7 @@
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:kDarkText,NSForegroundColorAttributeName,[UIFont systemFontOfSize:18],NSFontAttributeName, nil];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kDarkText,NSForegroundColorAttributeName,[UIFont systemFontOfSize:24],NSFontAttributeName, nil] forState:(UIControlStateNormal)];
     
+    _name = [Utils getValueForKey:@"name"];
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"请上传%@的身份证正反面照片",_name]];
     [string addAttribute:NSForegroundColorAttributeName value:RGB(78, 140, 238) range:NSMakeRange(3, string.length - 12)];
     _tipLabel.attributedText = string;

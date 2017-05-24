@@ -148,6 +148,13 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTR-XL-Epn">
+                    <rect key="frame" x="15" y="9" width="120" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="S9k-Yl-XSv"/>
+                        <constraint firstAttribute="width" constant="120" id="tVp-hh-hYR"/>
+                    </constraints>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -157,6 +164,7 @@
                 <constraint firstItem="wUz-MT-7f6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="8am-gm-vM4"/>
                 <constraint firstItem="oFQ-39-EqS" firstAttribute="centerY" secondItem="vDW-Bc-AEQ" secondAttribute="centerY" id="AfX-df-hrr"/>
                 <constraint firstItem="vDW-Bc-AEQ" firstAttribute="top" secondItem="whB-Sx-jIW" secondAttribute="bottom" constant="10" id="Cbq-9m-e7x"/>
+                <constraint firstItem="cTR-XL-Epn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Cms-Ro-E6h"/>
                 <constraint firstItem="xCG-lt-dPr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="DmF-KD-a14"/>
                 <constraint firstItem="7PN-7E-pck" firstAttribute="top" secondItem="WCY-ix-M96" secondAttribute="bottom" constant="10" id="EZh-jr-mgC"/>
                 <constraint firstItem="oFQ-39-EqS" firstAttribute="leading" secondItem="vDW-Bc-AEQ" secondAttribute="trailing" constant="15" id="Gje-JP-xk8"/>
@@ -180,6 +188,7 @@
                 <constraint firstAttribute="trailing" secondItem="Nt0-3i-Eu4" secondAttribute="trailing" constant="15" id="c1o-PS-YRW"/>
                 <constraint firstItem="H3J-KT-332" firstAttribute="top" secondItem="37X-dB-cP7" secondAttribute="bottom" constant="10" id="cGH-sP-kaS"/>
                 <constraint firstAttribute="trailing" secondItem="whB-Sx-jIW" secondAttribute="trailing" id="dLD-Ga-t8A"/>
+                <constraint firstItem="cTR-XL-Epn" firstAttribute="top" secondItem="YZv-dp-Mmj" secondAttribute="bottom" constant="8" id="ef2-PK-cVy"/>
                 <constraint firstAttribute="trailing" secondItem="1fv-Xw-ft0" secondAttribute="trailing" constant="15" id="glw-MW-Hhu"/>
                 <constraint firstItem="lR3-S7-Knf" firstAttribute="top" secondItem="fGF-mq-BLt" secondAttribute="bottom" constant="10" id="hGU-bX-JK7"/>
                 <constraint firstItem="YZv-dp-Mmj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hHf-kT-iIz"/>
@@ -201,6 +210,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="content" destination="Nt0-3i-Eu4" id="DlK-e7-Z85"/>
+                <outlet property="heardBtn" destination="cTR-XL-Epn" id="fBD-1O-gzt"/>
                 <outlet property="icon" destination="Sc5-9i-4QQ" id="X4C-9B-hPO"/>
                 <outlet property="picView" destination="fGF-mq-BLt" id="dKy-25-w3h"/>
                 <outlet property="status" destination="kxr-yo-FPD" id="j3B-gb-kZh"/>
@@ -208,7 +218,7 @@
                 <outlet property="title" destination="1fv-Xw-ft0" id="uJb-fn-zpL"/>
                 <outlet property="username" destination="7Ug-Jp-g96" id="dAR-oq-CZv"/>
             </connections>
-            <point key="canvasLocation" x="-1392" y="-485"/>
+            <point key="canvasLocation" x="-1688" y="-620.5"/>
         </view>
     </objects>
 </document>

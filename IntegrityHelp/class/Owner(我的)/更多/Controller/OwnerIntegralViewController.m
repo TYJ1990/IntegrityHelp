@@ -11,7 +11,7 @@
 #import "OwnerPointModel.h"
 #import "OwnerPointTableViewCell.h"
 #import "OwnerSearchMemberViewController.h"
-
+#import "OnerInfoViewController.h"
 
 @interface OwnerIntegralViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (nonatomic,strong)IntegralView *integralView;
@@ -168,6 +168,12 @@
         gray;
     })];
     return view;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    OnerInfoViewController *infoVC = [[OnerInfoViewController alloc] init];
+    infoVC.oid = [_pointModel.data[indexPath.row] Id];
+    [self.navigationController pushViewController:infoVC animated:YES];
 }
 
 

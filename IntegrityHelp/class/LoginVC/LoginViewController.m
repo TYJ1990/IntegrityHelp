@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "OwnerInfoModel.h"
+#import <CloudPushSDK/CloudPushSDK.h>
+#import "FindPWDViewController.h"
+
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
@@ -56,6 +59,10 @@
             [Utils setValue:model.f_id_name?model.f_id_name:@"" key:@"f_id_name"];
             [Utils setValue:model.ff_id_name?model.ff_id_name:@"" key:@"ff_id_name"];
             [Utils setValue:model.u_regtime ? model.u_regtime:@"" key:@"u_regtime"];
+            
+            [CloudPushSDK bindAccount:_phoneNumber.text withCallback:^(CloudPushCallbackResult *res) {
+                NSLog(@"绑定成功");
+            }];
             RootViewController *hvc = [[RootViewController alloc] init];
             self.view.window.rootViewController = hvc;
         }
@@ -70,8 +77,8 @@
 }
 
 - (IBAction)forgetPWD:(id)sender {
-    
-    
+    FindPWDViewController *findVC = [[FindPWDViewController alloc] init];
+    [self.navigationController pushViewController:findVC animated:YES];
 }
 
 

@@ -74,9 +74,6 @@
                 _checkingModel = [[OwnerCheckingModel alloc] initWithDictionary:response error:&error];
                 if (!error) {
                     [_searchTool.checking setTitle:[NSString stringWithFormat:@"待我审核（%ld）",_checkingModel.data.count] forState:(UIControlStateNormal)];
-                    if (_checkingModel.data.count == 0) {
-                        [self.view Message:@"暂无数据" HiddenAfterDelay:1];
-                    }
                 }
             }else{
                 OwnerCheckingModel *model = [[OwnerCheckingModel alloc] initWithDictionary:response error:&error];

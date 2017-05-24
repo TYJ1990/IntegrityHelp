@@ -36,7 +36,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的个性签名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGk-Pn-NHn">
                     <rect key="frame" x="15" y="5" width="114.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100个字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCa-MT-QFl">
@@ -81,7 +81,7 @@
                 <constraint firstAttribute="trailing" secondItem="UCa-MT-QFl" secondAttribute="trailing" constant="15" id="i4o-tC-kBc"/>
                 <constraint firstAttribute="trailing" secondItem="7fY-UW-E9m" secondAttribute="trailing" id="lvO-Y8-Wlo"/>
             </constraints>
-            <point key="canvasLocation" x="-663" y="21"/>
+            <point key="canvasLocation" x="-382" y="5"/>
         </view>
     </objects>
 </document>

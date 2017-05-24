@@ -63,6 +63,8 @@
 		021CA7D01ED3CB450062ED44 /* CloudPushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021CA7CD1ED3CB450062ED44 /* CloudPushSDK.framework */; };
 		021CA7DC1ED412370062ED44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856211ED278490036AEDA /* UIKit.framework */; };
 		021CA7DD1ED415860062ED44 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021CA7CE1ED3CB450062ED44 /* UTDID.framework */; };
+		021CA7E11ED5662C0062ED44 /* FindPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021CA7DF1ED5662B0062ED44 /* FindPWDViewController.m */; };
+		021CA7E21ED5662C0062ED44 /* FindPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021CA7E01ED5662B0062ED44 /* FindPWDViewController.xib */; };
 		023856101ED2777E0036AEDA /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238560F1ED2777E0036AEDA /* AlipaySDK.framework */; };
 		023856121ED277960036AEDA /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 023856111ED277960036AEDA /* AlipaySDK.bundle */; };
 		023856141ED277F50036AEDA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023856131ED277F50036AEDA /* libc++.tbd */; };
@@ -418,6 +420,9 @@
 		021CA7CD1ED3CB450062ED44 /* CloudPushSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudPushSDK.framework; sourceTree = "<group>"; };
 		021CA7CE1ED3CB450062ED44 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
 		021CA7D21ED3CBDA0062ED44 /* IntegrityHelp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntegrityHelp.entitlements; sourceTree = "<group>"; };
+		021CA7DE1ED5662B0062ED44 /* FindPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPWDViewController.h; sourceTree = "<group>"; };
+		021CA7DF1ED5662B0062ED44 /* FindPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPWDViewController.m; sourceTree = "<group>"; };
+		021CA7E01ED5662B0062ED44 /* FindPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPWDViewController.xib; sourceTree = "<group>"; };
 		0238560F1ED2777E0036AEDA /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		023856111ED277960036AEDA /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		023856131ED277F50036AEDA /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -1406,6 +1411,9 @@
 				026630341EAF44B300F45E36 /* RegisterViewController.xib */,
 				026630371EAF62C100F45E36 /* RegistProtocolViewController.h */,
 				026630381EAF62C100F45E36 /* RegistProtocolViewController.m */,
+				021CA7DE1ED5662B0062ED44 /* FindPWDViewController.h */,
+				021CA7DF1ED5662B0062ED44 /* FindPWDViewController.m */,
+				021CA7E01ED5662B0062ED44 /* FindPWDViewController.xib */,
 			);
 			path = LoginVC;
 			sourceTree = "<group>";
@@ -2154,6 +2162,7 @@
 				026630361EAF44B300F45E36 /* RegisterViewController.xib in Resources */,
 				026F93BA1EC44E8600D8A134 /* JKImagePickerController.strings in Resources */,
 				02F9D35B1ECD7E0400711AFC /* FundCardTableViewCell.xib in Resources */,
+				021CA7E21ED5662C0062ED44 /* FindPWDViewController.xib in Resources */,
 				021A17751EB2113100526477 /* HelperPruductViewController.xib in Resources */,
 				026F93CF1EC44E8600D8A134 /* Info.plist in Resources */,
 				02F9D3401ECC381F00711AFC /* FundTableViewCell.xib in Resources */,
@@ -2337,6 +2346,7 @@
 				026F93661EC4103F00D8A134 /* JFPhotoView.m in Sources */,
 				02D916751EB60DBC00FDCA5F /* OwnerMemberSystemViewController.m in Sources */,
 				026F93651EC4103F00D8A134 /* JFPhotoBrowserViewController.m in Sources */,
+				021CA7E11ED5662C0062ED44 /* FindPWDViewController.m in Sources */,
 				02A71E341EB961CF0060DCFB /* LBXScanViewController.m in Sources */,
 				026F93C51EC44E8600D8A134 /* JKPromptView.m in Sources */,
 				02A71E641EBB10340060DCFB /* HelpDetailModel.m in Sources */,

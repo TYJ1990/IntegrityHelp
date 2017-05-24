@@ -88,69 +88,70 @@
 
 - (void)setUI{
     
-    double rA = 80;
-    double size = 30;
-    double startXA = self.view.center.x;
-    double startYA = self.view.center.y + 10;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        double rA = 80;
+        double size = 30;
+        double startXA = self.view.center.x;
+        double startYA = self.view.center.y;
+        
+        double r = 3 *rA / 4;
+        double startX = [self judgeCirclePointX:startXA r:size + 3*rA/4 range:270.0];
+        double startY = [self judgeCirclePointY:startYA r:size + 3*rA/4 range:90.0];
     
-    double r = 3 *rA / 4;
-    double startX = [self judgeCirclePointX:startXA r:size + 3*rA/4 range:270.0];
-    double startY = [self judgeCirclePointY:startYA r:size + 3*rA/4 range:90.0];
-    
-   
-    //2级
-    if (_memberSystemModel.data.count > 0) {
-         _type = @"2";
-        if ([_memberSystemModel.data[0] son].count > 0) {
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:270], [self judgeCirclePointY:startY r:size + 3*r/4 range:90]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[0] son][0] Face]) tag:5];
-        }
-        if ([_memberSystemModel.data[0] son].count > 1){
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:190], [self judgeCirclePointY:startY r:size + 3*r/4 range:10]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[0] son][1] Face]) tag:6];
-        }
-        if ([_memberSystemModel.data[0] son].count > 2){
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:-10], [self judgeCirclePointY:startY r:size + 3*r/4 range:10]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[0] son][2] Face]) tag:7];
-        }
-        _type = @"1";
-        //1级
-        [self createCircle:CGRectMake(0, 0, 3*rA/4, 3*rA/4) point:CGPointMake([self judgeCirclePointX:startXA r:size + 3*rA/4 range:270], [self judgeCirclePointY:startYA r:size + 3*rA/4 range:90]) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3([_memberSystemModel.data[0] Face]) tag:2];
-    }
-    if (_memberSystemModel.data.count > 1){
         //2级
-        _type = @"2";
-        startX = [self judgeCirclePointX:startXA r:size + 3*rA/4 range:150];
-        startY = [self judgeCirclePointY:startYA r:size + 3*rA/4 range:-30];
-        if ([_memberSystemModel.data[1] son].count > 0) {
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:230], [self judgeCirclePointY:startY r:size + 3*r/4 range:50]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][0] Face]) tag:8];
+        if (_memberSystemModel.data.count > 0) {
+            _type = @"2";
+            if ([_memberSystemModel.data[0] son].count > 0) {
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:270], [self judgeCirclePointY:startY r:size + 3*r/4 range:90]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[0] son][0] Face]) tag:5];
+            }
+            if ([_memberSystemModel.data[0] son].count > 1){
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:190], [self judgeCirclePointY:startY r:size + 3*r/4 range:10]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[0] son][1] Face]) tag:6];
+            }
+            if ([_memberSystemModel.data[0] son].count > 2){
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:-10], [self judgeCirclePointY:startY r:size + 3*r/4 range:10]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[0] son][2] Face]) tag:7];
+            }
+            _type = @"1";
+            //1级
+            [self createCircle:CGRectMake(0, 0, 3*rA/4, 3*rA/4) point:CGPointMake([self judgeCirclePointX:startXA r:size + 3*rA/4 range:270], [self judgeCirclePointY:startYA r:size + 3*rA/4 range:90]) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3([_memberSystemModel.data[0] Face]) tag:2];
         }
-        if ([_memberSystemModel.data[1] son].count > 1){
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:150], [self judgeCirclePointY:startY r:size + 3*r/4 range:-30]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][1] Face]) tag:9];
+        if (_memberSystemModel.data.count > 1){
+            //2级
+            _type = @"2";
+            startX = [self judgeCirclePointX:startXA r:size + 3*rA/4 range:150];
+            startY = [self judgeCirclePointY:startYA r:size + 3*rA/4 range:-30];
+            if ([_memberSystemModel.data[1] son].count > 0) {
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:230], [self judgeCirclePointY:startY r:size + 3*r/4 range:50]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][0] Face]) tag:8];
+            }
+            if ([_memberSystemModel.data[1] son].count > 1){
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:150], [self judgeCirclePointY:startY r:size + 3*r/4 range:-30]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][1] Face]) tag:9];
+            }
+            if ([_memberSystemModel.data[1] son].count > 2){
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:70], [self judgeCirclePointY:startY r:size + 3*r/4 range:-110]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][2] Face]) tag:10];
+            }
+            _type = @"1";
+            [self createCircle:CGRectMake(0, 0, 3*rA/4, 3*rA/4) point:CGPointMake([self judgeCirclePointX:startXA r:size + 3*rA/4 range:150], [self judgeCirclePointY:startYA r:size + 3*rA/4 range:-30]) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3([_memberSystemModel.data[1] Face]) tag:3];
         }
-        if ([_memberSystemModel.data[1] son].count > 2){
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:70], [self judgeCirclePointY:startY r:size + 3*r/4 range:-110]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][2] Face]) tag:10];
+        if (_memberSystemModel.data.count > 2){
+            //2级
+            _type = @"2";
+            startX = [self judgeCirclePointX:startXA r:size + 3*rA/4 range:30];
+            startY = [self judgeCirclePointY:startYA r:size + 3*rA/4 range:210];
+            if ([_memberSystemModel.data[2] son].count > 0) {
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:310], [self judgeCirclePointY:startY r:size + 3*r/4 range:130]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[2] son][0] Face]) tag:11];
+            }
+            if ([_memberSystemModel.data[2] son].count > 1){
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:110], [self judgeCirclePointY:startY r:size + 3*r/4 range:-70]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][1] Face]) tag:12];
+            }
+            if ([_memberSystemModel.data[2] son].count > 2){
+                [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:30], [self judgeCirclePointY:startY r:size + 3*r/4 range:210]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][2] Face]) tag:13];
+            }
+            _type = @"1";
+            [self createCircle:CGRectMake(0, 0, 3*rA/4, 3*rA/4) point:CGPointMake([self judgeCirclePointX:startXA r:size + 3*rA/4 range:30], [self judgeCirclePointY:startYA r:size + 3*rA/4 range:210]) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3([_memberSystemModel.data[2] Face]) tag:4];
         }
-         _type = @"1";
-        [self createCircle:CGRectMake(0, 0, 3*rA/4, 3*rA/4) point:CGPointMake([self judgeCirclePointX:startXA r:size + 3*rA/4 range:150], [self judgeCirclePointY:startYA r:size + 3*rA/4 range:-30]) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3([_memberSystemModel.data[1] Face]) tag:3];
-    }
-    if (_memberSystemModel.data.count > 2){
-        //2级
-        _type = @"2";
-        startX = [self judgeCirclePointX:startXA r:size + 3*rA/4 range:30];
-        startY = [self judgeCirclePointY:startYA r:size + 3*rA/4 range:210];
-        if ([_memberSystemModel.data[2] son].count > 0) {
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:310], [self judgeCirclePointY:startY r:size + 3*r/4 range:130]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[2] son][0] Face]) tag:11];
-        }
-        if ([_memberSystemModel.data[2] son].count > 1){
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:110], [self judgeCirclePointY:startY r:size + 3*r/4 range:-70]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][1] Face]) tag:12];
-        }
-        if ([_memberSystemModel.data[2] son].count > 2){
-            [self createCircle:CGRectMake(0, 0, 3*r/4, 3*r/4) point:CGPointMake([self judgeCirclePointX:startX r:size + 3*r/4 range:30], [self judgeCirclePointY:startY r:size + 3*r/4 range:210]) ponintC:CGPointMake(startX, startY) imgName:imageUrl3([[_memberSystemModel.data[1] son][2] Face]) tag:13];
-        }
-         _type = @"1";
-        [self createCircle:CGRectMake(0, 0, 3*rA/4, 3*rA/4) point:CGPointMake([self judgeCirclePointX:startXA r:size + 3*rA/4 range:30], [self judgeCirclePointY:startYA r:size + 3*rA/4 range:210]) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3([_memberSystemModel.data[2] Face]) tag:4];
-    }
-    
-    _type = @"0";
-     [self createCircle:CGRectMake(0, 0, rA, rA) point:CGPointMake(startXA,startYA) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3(_memberSystemModel.my.Face) tag:1];
+        
+        _type = @"0";
+        [self createCircle:CGRectMake(0, 0, rA, rA) point:CGPointMake(startXA,startYA) ponintC:CGPointMake(startXA, startYA) imgName:imageUrl3(_memberSystemModel.my.Face) tag:1];
+    });
     
     if (!_grayView) {
         [self.view addSubview:({
@@ -160,6 +161,7 @@
             _grayView;
         })];
     }
+
 }
 
 
@@ -218,17 +220,17 @@
     
     //设施路径画布
     CAShapeLayer *lineShape = [CAShapeLayer new];
-    lineShape.frame = self.view.frame;
+//    lineShape.frame = self.view.frame;
     
     //宽度
     lineShape.lineWidth = 2;
-    
-    //线条之间点的样式
-    lineShape.lineJoin = kCALineJoinMiter;
-    
-    //线条结尾的样式
-    lineShape.lineCap = kCALineCapSquare;
-    
+//    
+//    //线条之间点的样式
+//    lineShape.lineJoin = kCALineJoinMiter;
+//    
+//    //线条结尾的样式
+//    lineShape.lineCap = kCALineCapSquare;
+//    
     //路径颜色
     lineShape.strokeColor = [UIColor redColor].CGColor;
     
@@ -237,6 +239,8 @@
     
     //填充色
     lineShape.fillColor = [UIColor clearColor].CGColor;
+
+    
     
     //把绘制的图放到layer上
     [self.view.layer addSublayer:lineShape];
